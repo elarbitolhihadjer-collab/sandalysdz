@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Sandaly's — Femme Editorial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#f8f4ed;--paper:#fffdf9;--sand:#e8dccb;--brown:#392d23;
+  --ink:#211a15;--gold:#b49363;--muted:#7e7368;--line:rgba(57,45,35,.14);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",Arial,sans-serif;background:var(--ivory);color:var(--ink);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%}
+.top{
+  height:30px;padding:0 4.5%;display:flex;justify-content:space-between;align-items:center;
+  border-bottom:1px solid var(--line);font-size:8px;text-transform:uppercase;letter-spacing:1.1px;
+  background:var(--paper)
+}
+.header{
+  position:sticky;top:0;z-index:1000;background:rgba(255,253,249,.9);
+  backdrop-filter:blur(16px);border-bottom:1px solid var(--line)
+}
+.head-main{height:72px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 4.5%}
+.logo{font-family:"Playfair Display",serif;font-size:25px;letter-spacing:-1px}
+.logo em{color:var(--gold);font-weight:400}
+.actions{justify-self:end;display:flex;gap:20px;font-size:9px;text-transform:uppercase;letter-spacing:1px}
+.menu{height:38px;display:flex;gap:28px;align-items:center;overflow-x:auto;padding:0 4.5%;border-top:1px solid rgba(57,45,35,.06);scrollbar-width:none}
+.menu::-webkit-scrollbar{display:none}
+.menu a{white-space:nowrap;font-size:8px;text-transform:uppercase;letter-spacing:1px;position:relative;padding-bottom:3px}
+.menu a:after{content:"";position:absolute;left:0;bottom:-3px;width:0;height:1px;background:var(--gold);transition:.3s}
+.menu a:hover:after,.menu a.active:after{width:100%}
+
+.hero{
+  min-height:76vh;display:grid;grid-template-columns:.9fr 1.1fr;align-items:stretch;
+  margin:0 4.5%;border-left:1px solid var(--line);border-right:1px solid var(--line);
+  background:var(--paper)
+}
+.hero-copy{padding:9vw 6vw 7vw;display:flex;flex-direction:column;justify-content:center;position:relative}
+.kicker{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.hero h1{font-family:"Playfair Display",serif;font-size:clamp(54px,7vw,100px);line-height:.91;font-weight:400;letter-spacing:-4px}
+.hero h1 em{color:var(--gold);font-weight:400}
+.hero p{max-width:410px;margin:26px 0 32px;color:var(--muted);font-size:13px;line-height:1.9}
+.hero-link{display:inline-flex;width:max-content;gap:20px;align-items:center;border-bottom:1px solid var(--ink);padding-bottom:8px;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:1.6px}
+.hero-visual{position:relative;overflow:hidden;background:#e9dfd0}
+.hero-visual img{height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.22,1,.36,1)}
+.hero-visual:hover img{transform:scale(1.035)}
+.hero-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(34,24,15,.28))}
+.hero-note{position:absolute;right:22px;bottom:20px;color:white;z-index:2;font-size:9px;letter-spacing:2px;text-transform:uppercase}
+
+.intro{padding:110px 6% 70px;text-align:center}
+.intro span{font-size:9px;color:var(--gold);letter-spacing:3px;text-transform:uppercase}
+.intro h2{font-family:"Playfair Display",serif;font-size:clamp(40px,5vw,70px);font-weight:400;line-height:1;margin-top:15px}
+.intro h2 em{color:var(--gold)}
+.intro p{max-width:580px;margin:22px auto 0;color:var(--muted);font-size:13px;line-height:1.85}
+
+.grid-wrap{padding:0 4.5% 120px}
+.grid{
+  display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:240px;
+  gap:12px;max-width:1550px;margin:auto
+}
+.card{grid-column:span 4;grid-row:span 2;position:relative;overflow:hidden;background:#dfd6ca}
+.card-featured{grid-column:span 8}
+.card img{position:absolute;inset:0;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.22,1,.36,1),filter .8s}
+.card:hover img{transform:scale(1.045);filter:brightness(.91)}
+.shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.02) 25%,rgba(24,17,10,.7) 100%);z-index:1}
+.num{position:absolute;top:17px;left:18px;z-index:2;color:#fff;font-size:8px;letter-spacing:2px;border:1px solid rgba(255,255,255,.45);padding:7px 8px}
+.card-copy{position:absolute;left:0;right:0;bottom:0;padding:28px;z-index:2;color:#fff;transform:translateY(10px);transition:.45s}
+.card:hover .card-copy{transform:none}
+.mini{display:block;color:#ead0a3;font-size:8px;letter-spacing:2px;text-transform:uppercase;margin-bottom:9px}
+.card h3{font-family:"Playfair Display",serif;font-size:clamp(24px,2.7vw,42px);font-weight:400;line-height:1.03}
+.discover{display:inline-flex;gap:12px;align-items:center;margin-top:18px;font-size:8px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;opacity:.9}
+.discover b{font-size:14px;font-weight:400;transition:.3s}
+.card:hover .discover b{transform:translateX(5px)}
+
+.editorial{margin:0 4.5% 120px;display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);background:var(--paper)}
+.ed-box{padding:75px 7vw;min-height:320px;display:flex;flex-direction:column;justify-content:center}
+.ed-box + .ed-box{border-left:1px solid var(--line);background:var(--sand)}
+.ed-box small{font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.ed-box h2{font-family:"Playfair Display",serif;font-size:clamp(34px,4vw,56px);font-weight:400;line-height:1}
+.ed-box p{margin-top:18px;max-width:390px;color:var(--muted);font-size:12px;line-height:1.8}
+
+footer{background:var(--brown);color:rgba(255,255,255,.72);padding:65px 5% 28px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:55px;max-width:1400px;margin:auto}
+footer h3{font-family:"Playfair Display",serif;font-size:25px;color:#fff;font-weight:400}
+footer p{max-width:330px;font-size:11px;line-height:1.8;margin-top:15px}
+footer h4{font-size:9px;text-transform:uppercase;letter-spacing:1.7px;color:#d9bd8f;margin-bottom:18px}
+footer a{display:block;font-size:10px;margin-bottom:10px}
+.copy{max-width:1400px;margin:48px auto 0;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;font-size:8px;letter-spacing:1px}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;margin:0}
+  .hero-copy{padding:85px 30px;text-align:center;align-items:center}
+  .hero-visual{height:70vw;min-height:430px}
+  .grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:auto}
+  .card,.card-featured{grid-column:auto;grid-row:auto;height:62vw;min-height:360px}
+  .editorial{grid-template-columns:1fr;margin:0 15px 80px}
+  .ed-box + .ed-box{border-left:0;border-top:1px solid var(--line)}
+}
+@media(max-width:650px){
+  .top{padding:0 12px}
+  .head-main{height:60px;padding:0 14px;grid-template-columns:1fr auto}
+  .logo{font-size:21px}
+  .head-main>div:first-child{display:none}
+  .actions{font-size:8px;gap:12px}
+  .menu{padding:0 14px;gap:20px}
+  .hero{min-height:auto}
+  .hero-copy{padding:68px 22px 52px}
+  .hero h1{font-size:clamp(48px,15vw,68px);letter-spacing:-3px}
+  .hero-visual{height:95vw;min-height:0}
+  .intro{padding:75px 22px 45px}
+  .grid-wrap{padding:0 6px 75px}
+  .grid{gap:4px}
+  .card,.card-featured{height:72vw;min-height:0}
+  .card-copy{padding:16px 14px}
+  .card h3{font-size:22px}
+  .mini{font-size:7px}
+  .discover{display:none}
+  .num{top:10px;left:10px}
+  .editorial{margin:0 8px 70px}
+  .ed-box{padding:55px 26px;min-height:260px;text-align:center;align-items:center}
+  .footer-grid{grid-template-columns:1fr;gap:35px}
+  .copy{flex-direction:column;gap:8px}
+}
+</style>
+</head>
+<body>
+<div class="top">
+  <div>Sandaly's • Algérie</div>
+  <div>FR &nbsp;&nbsp; DZ</div>
+</div>
+
+<header class="header">
+  <div class="head-main">
+    <div></div>
+    <a href="#" class="logo">sandaly<em>s</em></a>
+    <div class="actions"><a href="#">Recherche</a><a href="#">Panier</a></div>
+  </div>
+  <nav class="menu">
+    <a class="active" href="#">Femme</a>
+    <a href="https://www.sandalysdz.com/categorie-produit/femme/catalina/" target="_blank">CATALINA</a><a href="https://www.sandalysdz.com/categorie-produit/femme/deux-bnade-large-femme/" target="_blank">Deux Bnade Large Femme</a><a href="https://www.sandalysdz.com/categorie-produit/femme/mule-fermee-femme/" target="_blank">Mule Fermèe Femme</a><a href="https://www.sandalysdz.com/categorie-produit/femme/mule-injecter/" target="_blank">Mule Injecter</a><a href="https://www.sandalysdz.com/categorie-produit/femme/naples/" target="_blank">Naples</a><a href="https://www.sandalysdz.com/categorie-produit/femme/offre-pack/" target="_blank">OFFRE PACK</a><a href="https://www.sandalysdz.com/categorie-produit/femme/sandales-f/" target="_blank">Sandales F</a><a href="https://www.sandalysdz.com/categorie-produit/femme/sandales-halfa-lisiere/" target="_blank">Sandales Halfa (Lisière)</a><a href="https://www.sandalysdz.com/categorie-produit/femme/style-1-femme/" target="_blank">style 1 Femme</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-copy reveal visible">
+      <div class="kicker">Collection Femme • 2026</div>
+      <h1>Une allure<br><em>à vous.</em></h1>
+      <p>Découvrez une sélection pensée pour accompagner chaque style, du quotidien aux moments qui comptent.</p>
+      <a class="hero-link" href="#collections">Explorer la collection <span>→</span></a>
+    </div>
+    <div class="hero-visual">
+      <img src="images/femme/catalina.jpg" alt="Collection Femme Sandalys">
+      <span class="hero-note">Sandalys • Femme</span>
+    </div>
+  </section>
+
+  <section class="intro reveal" id="collections">
+    <span>La sélection Sandalys</span>
+    <h2>Choisissez votre<br><em>signature.</em></h2>
+    <p>Neuf univers, une même idée : proposer des modèles féminins faciles à porter, élégants et pensés pour votre quotidien.</p>
+  </section>
+
+  <section class="grid-wrap">
+    <div class="grid">
+      
+      <a class="card card-featured reveal" href="https://www.sandalysdz.com/categorie-produit/femme/catalina/" target="_blank" rel="noopener">
+        <img src="images/femme/catalina.jpg" alt="CATALINA">
+        <div class="shade"></div>
+        <span class="num">01</span>
+        <div class="card-copy">
+          <span class="mini">Collection Femme</span>
+          <h3>CATALINA</h3>
+          <span class="discover">Découvrir <b>→</b></span>
+        </div>
+      </a>
+      <a class="card reveal" href="https://www.sandalysdz.com/categorie-produit/femme/deux-bnade-large-femme/" target="_blank" rel="noopener">
+        <img src="images/femme/deux-bnade-large-femme.jpg" alt="Deux Bnade Large Femme">
+        <div class="shade"></div>
+        <span class="num">02</span>
+        <div class="card-copy">
+          <span class="mini">Collection Femme</span>
+          <h3>Deux Bnade Large Femme</h3>
+          <span class="discover">Découvrir <b>→</b></span>
+        </div>
+      </a>
+      <a class="card reveal" href="https://www.sandalysdz.com/categorie-produit/femme/mule-fermee-femme/" target="_blank" rel="noopener">
+        <img src="images/femme/mule-fermee-femme.jpg" alt="Mule Fermèe Femme">
+        <div class="shade"></div>
+        <span class="num">03</span>
+        <div class="card-copy">
+          <span class="mini">Collection Femme</span>
+          <h3>Mule Fermèe Femme</h3>
+          <span class="discover">Découvrir <b>→</b></span>
+        </div>
+      </a>
+      <a class="card reveal" href="https://www.sandalysdz.com/categorie-produit/femme/mule-injecter/" target="_blank" rel="noopener">
+        <img src="images/femme/mule-injecter.jpg" alt="Mule Injecter">
+        <div class="shade"></div>
+        <span class="num">04</span>
+        <div class="card-copy">
+          <span class="mini">Collection Femme</span>
+          <h3>Mule Injecter</h3>
+          <span class="discover">Découvrir <b>→</b></span>
+        </div>
+      </a>
+      <a class="card reveal" href="https://www.sandalysdz.com/categorie-produit/femme/naples/" target="_blank" rel="noopener">
+        <img src="images/femme/naples.jpg" alt="Naples">
+        <div class="shade"></div>
+        <span class="num">05</span>
+        <div class="card-copy">
+          <span class="mini">Collection Femme</span>
+          <h3>Naples</h3>
+          <span class="discover">Découvrir <b>→</b></span>
+        </div>
+      </a>
+      <a class="card card-featured reveal" href="https://www.sandalysdz.com/categorie-produit/femme/offre-pack/" target="_blank" rel="noopener">
+        <img src="images/femme/offre-pack.jpg" alt="OFFRE PACK">
+        <div class="shade"></div>
+        <span class="num">06</span>
+        <div class="card-copy">
+          <span class="mini">Collection Femme</span>
+          <h3>OFFRE PACK</h3>
+          <span class="discover">Découvrir <b>→</b></span>
+        </div>
+      </a>
+      <a class="card reveal" href="https://www.sandalysdz.com/categorie-produit/femme/sandales-f/" target="_blank" rel="noopener">
+        <img src="images/femme/sandales-f.jpg" alt="Sandales F">
+        <div class="shade"></div>
+        <span class="num">07</span>
+        <div class="card-copy">
+          <span class="mini">Collection Femme</span>
+          <h3>Sandales F</h3>
+          <span class="discover">Découvrir <b>→</b></span>
+        </div>
+      </a>
+      <a class="card reveal" href="https://www.sandalysdz.com/categorie-produit/femme/sandales-halfa-lisiere/" target="_blank" rel="noopener">
+        <img src="images/femme/sandales-halfa-lisiere.jpg" alt="Sandales Halfa (Lisière)">
+        <div class="shade"></div>
+        <span class="num">08</span>
+        <div class="card-copy">
+          <span class="mini">Collection Femme</span>
+          <h3>Sandales Halfa (Lisière)</h3>
+          <span class="discover">Découvrir <b>→</b></span>
+        </div>
+      </a>
+      <a class="card reveal" href="https://www.sandalysdz.com/categorie-produit/femme/style-1-femme/" target="_blank" rel="noopener">
+        <img src="images/femme/style-1-femme.jpg" alt="style 1 Femme">
+        <div class="shade"></div>
+        <span class="num">09</span>
+        <div class="card-copy">
+          <span class="mini">Collection Femme</span>
+          <h3>style 1 Femme</h3>
+          <span class="discover">Découvrir <b>→</b></span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="editorial reveal">
+    <div class="ed-box">
+      <small>Sandalys</small>
+      <h2>L’élégance<br>au quotidien.</h2>
+      <p>Des lignes simples, des matières choisies et des silhouettes faciles à intégrer dans chaque tenue.</p>
+    </div>
+    <div class="ed-box">
+      <small>Collection Femme</small>
+      <h2>Votre style,<br>sans compromis.</h2>
+      <p>Explorez toutes nos catégories et trouvez la paire qui accompagne votre personnalité.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3>sandalys</h3>
+      <p>Chaussures et sandales pour femme, sélectionnées pour associer style, confort et simplicité.</p>
+    </div>
+    <div>
+      <h4>Collections</h4>
+      <a href="https://www.sandalysdz.com/categorie-produit/femme/catalina/">CATALINA</a><a href="https://www.sandalysdz.com/categorie-produit/femme/deux-bnade-large-femme/">Deux Bnade Large Femme</a><a href="https://www.sandalysdz.com/categorie-produit/femme/mule-fermee-femme/">Mule Fermèe Femme</a><a href="https://www.sandalysdz.com/categorie-produit/femme/mule-injecter/">Mule Injecter</a><a href="https://www.sandalysdz.com/categorie-produit/femme/naples/">Naples</a>
+    </div>
+    <div>
+      <h4>Découvrir</h4>
+      <a href="https://www.sandalysdz.com/categorie-produit/femme/offre-pack/">OFFRE PACK</a><a href="https://www.sandalysdz.com/categorie-produit/femme/sandales-f/">Sandales F</a><a href="https://www.sandalysdz.com/categorie-produit/femme/sandales-halfa-lisiere/">Sandales Halfa (Lisière)</a><a href="https://www.sandalysdz.com/categorie-produit/femme/style-1-femme/">style 1 Femme</a>
+    </div>
+  </div>
+  <div class="copy"><span>© 2026 Sandalys</span><span>Tous droits réservés</span></div>
+</footer>
+
+<script>
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target)}
+  })
+},{threshold:.08});
+document.querySelectorAll(".reveal").forEach((el,i)=>{
+  el.style.transitionDelay=`${Math.min(i*.04,.3)}s`;
+  observer.observe(el);
+});
+document.querySelectorAll("img").forEach(img=>{
+  img.addEventListener("error",function(){
+    this.style.opacity="0";
+    this.parentElement.style.background="linear-gradient(135deg,#e9e1d6,#cfc2b1)";
+  });
+});
+</script>
+</body>
+</html>

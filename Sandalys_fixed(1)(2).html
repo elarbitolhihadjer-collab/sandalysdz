@@ -1,0 +1,4450 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sandalys DZ — Services</title>
+
+  <style>
+
+    /* =========================================================
+       BEIGE LUXURY — SERVICES
+    ========================================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: #f5f0e8;
+      color: #302a24;
+    }
+
+    /* =========================================================
+       SECTION
+    ========================================================= */
+
+    .luxury-services {
+      padding: 85px 20px;
+      background:
+        radial-gradient(
+          circle at 15% 20%,
+          rgba(255,255,255,.75),
+          transparent 35%
+        ),
+        radial-gradient(
+          circle at 85% 80%,
+          rgba(214,196,166,.18),
+          transparent 35%
+        ),
+        #f5f0e8;
+      overflow: hidden;
+    }
+
+    .luxury-container {
+      width: min(1180px, 100%);
+      margin: auto;
+    }
+
+    /* =========================================================
+       INTRO
+    ========================================================= */
+
+    .luxury-intro {
+      text-align: center;
+      margin-bottom: 52px;
+
+      opacity: 0;
+      transform: translateY(25px);
+      animation: luxuryFadeUp .9s ease forwards;
+    }
+
+    .luxury-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+
+      margin-bottom: 17px;
+
+      color: #a48761;
+
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .luxury-kicker::before,
+    .luxury-kicker::after {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: #cbb99d;
+    }
+
+    .luxury-intro h2 {
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: clamp(30px, 4vw, 43px);
+      font-weight: 400;
+      line-height: 1.2;
+
+      color: #302a24;
+    }
+
+    .luxury-intro h2 em {
+      color: #a48761;
+      font-style: italic;
+    }
+
+    .luxury-intro p {
+      max-width: 470px;
+      margin: 15px auto 0;
+
+      color: #887d70;
+
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    /* =========================================================
+       GRID
+    ========================================================= */
+
+    .luxury-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      border: 1px solid rgba(164,135,97,.28);
+
+      background: rgba(255,255,255,.22);
+
+      backdrop-filter: blur(8px);
+    }
+
+    /* =========================================================
+       CARD
+    ========================================================= */
+
+    .luxury-card {
+      position: relative;
+
+      min-height: 270px;
+      padding: 45px 25px 38px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      border-right: 1px solid rgba(164,135,97,.25);
+
+      overflow: hidden;
+
+      opacity: 0;
+      transform: translateY(35px);
+
+      animation: cardReveal .8s cubic-bezier(.22,1,.36,1) forwards;
+
+      transition:
+        background .5s ease,
+        transform .5s ease;
+    }
+
+    .luxury-card:last-child {
+      border-right: none;
+    }
+
+    .luxury-card:nth-child(1) {
+      animation-delay: .15s;
+    }
+
+    .luxury-card:nth-child(2) {
+      animation-delay: .25s;
+    }
+
+    .luxury-card:nth-child(3) {
+      animation-delay: .35s;
+    }
+
+    .luxury-card:nth-child(4) {
+      animation-delay: .45s;
+    }
+
+    /* =========================================================
+       LUXURY HOVER LIGHT
+    ========================================================= */
+
+    .luxury-card::before {
+      content: "";
+
+      position: absolute;
+      width: 180px;
+      height: 180px;
+
+      top: -90px;
+      right: -90px;
+
+      border-radius: 50%;
+
+      background: rgba(255,255,255,.65);
+
+      transform: scale(0);
+
+      transition: transform .65s cubic-bezier(.22,1,.36,1);
+    }
+
+    .luxury-card:hover::before {
+      transform: scale(1);
+    }
+
+    /* =========================================================
+       GOLD LINE
+    ========================================================= */
+
+    .luxury-card::after {
+      content: "";
+
+      position: absolute;
+
+      bottom: 0;
+      left: 50%;
+
+      width: 0;
+      height: 2px;
+
+      background: #b69a72;
+
+      transform: translateX(-50%);
+
+      transition: width .45s ease;
+    }
+
+    .luxury-card:hover::after {
+      width: 55px;
+    }
+
+    /* =========================================================
+       NUMBER
+    ========================================================= */
+
+    .luxury-number {
+      position: absolute;
+
+      top: 18px;
+      left: 20px;
+
+      color: #b6a58f;
+
+      font-family: Georgia, serif;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    /* =========================================================
+       ICON
+    ========================================================= */
+
+    .luxury-icon {
+      position: relative;
+      z-index: 2;
+
+      width: 62px;
+      height: 62px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-bottom: 22px;
+
+      border: 1px solid #cbb99d;
+      border-radius: 50%;
+
+      background: rgba(255,255,255,.45);
+
+      transition:
+        transform .55s cubic-bezier(.22,1,.36,1),
+        background .45s ease,
+        border-color .45s ease;
+    }
+
+    .luxury-icon svg {
+      width: 25px;
+      height: 25px;
+
+      stroke: #8e7555;
+
+      transition:
+        stroke .3s ease,
+        transform .4s ease;
+    }
+
+    .luxury-card:hover .luxury-icon {
+      transform: translateY(-6px) rotate(-4deg);
+
+      background: #302a24;
+      border-color: #302a24;
+    }
+
+    .luxury-card:hover .luxury-icon svg {
+      stroke: #f5f0e8;
+      transform: scale(1.08);
+    }
+
+    /* =========================================================
+       TEXT
+    ========================================================= */
+
+    .luxury-card h3 {
+      position: relative;
+      z-index: 2;
+
+      margin-bottom: 9px;
+
+      color: #302a24;
+
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 17px;
+      font-weight: 400;
+    }
+
+    .luxury-card p {
+      position: relative;
+      z-index: 2;
+
+      max-width: 190px;
+
+      color: #857a6d;
+
+      font-size: 12px;
+      line-height: 1.75;
+    }
+
+    /* =========================================================
+       ANIMATIONS
+    ========================================================= */
+
+    @keyframes luxuryFadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes cardReveal {
+      from {
+        opacity: 0;
+        transform: translateY(35px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =========================================================
+       TABLET
+    ========================================================= */
+
+    @media (max-width: 900px) {
+
+      .luxury-services {
+        padding: 65px 18px;
+      }
+
+      .luxury-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .luxury-card:nth-child(2) {
+        border-right: none;
+      }
+
+      .luxury-card:nth-child(1),
+      .luxury-card:nth-child(2) {
+        border-bottom: 1px solid rgba(164,135,97,.25);
+      }
+    }
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 560px) {
+
+      .luxury-services {
+        padding: 50px 13px;
+      }
+
+      .luxury-intro {
+        margin-bottom: 32px;
+      }
+
+      .luxury-intro h2 {
+        font-size: 29px;
+      }
+
+      .luxury-intro p {
+        font-size: 12px;
+        padding: 0 10px;
+      }
+
+      .luxury-kicker {
+        font-size: 9px;
+        letter-spacing: 2.5px;
+      }
+
+      .luxury-kicker::before,
+      .luxury-kicker::after {
+        width: 18px;
+      }
+
+      .luxury-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .luxury-card {
+        min-height: 200px;
+        padding: 30px 12px;
+      }
+
+      .luxury-card:nth-child(3) {
+        border-right: 1px solid rgba(164,135,97,.25);
+      }
+
+      .luxury-card:nth-child(4) {
+        border-right: none;
+      }
+
+      .luxury-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 15px;
+      }
+
+      .luxury-icon svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      .luxury-card h3 {
+        font-size: 14px;
+        margin-bottom: 6px;
+      }
+
+      .luxury-card p {
+        font-size: 10.5px;
+        line-height: 1.55;
+      }
+
+      .luxury-number {
+        top: 12px;
+        left: 12px;
+        font-size: 9px;
+      }
+    }
+
+    /* =========================================================
+       ACCESSIBILITY
+    ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+
+    }
+  </style>
+
+<style>
+html[dir="rtl"] body,
+body.arabic {
+    font-family: Arial, "Tahoma", sans-serif;
+}
+
+html[dir="rtl"] .hero-content,
+html[dir="rtl"] .category-content,
+html[dir="rtl"] .video-story-content,
+html[dir="rtl"] .luxury-intro,
+html[dir="rtl"] .luxury-card,
+html[dir="rtl"] .social-header {
+    text-align: right;
+}
+
+html[dir="rtl"] .hero-buttons,
+html[dir="rtl"] .video-eyebrow {
+    justify-content: flex-start;
+}
+
+html[dir="rtl"] .hero-small::before,
+html[dir="rtl"] .video-eyebrow::before {
+    display: none;
+}
+
+html[dir="rtl"] .hero-small::after,
+html[dir="rtl"] .video-eyebrow::after {
+    content: "";
+    width: 38px;
+    height: 1px;
+    background: var(--gold);
+}
+
+@media (max-width: 950px) {
+    html[dir="rtl"] .hero-content,
+    html[dir="rtl"] .video-story-content { text-align: center; }
+    html[dir="rtl"] .hero-buttons,
+    html[dir="rtl"] .video-eyebrow { justify-content: center; }
+}
+/* =========================================================
+   FIX — CENTER HOMME / FEMME CONTENT
+   ========================================================= */
+
+.category-card {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* المحتوى في منتصف الصورة بالضبط */
+.category-card .category-content {
+    position: absolute !important;
+
+    top: 50% !important;
+    bottom: auto !important;
+
+    left: 0 !important;
+    right: 0 !important;
+
+    width: 100% !important;
+
+    transform: translateY(-50%) !important;
+
+    margin: 0 !important;
+
+    padding: 20px 40px !important;
+
+    text-align: center !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    z-index: 5 !important;
+}
+
+/* لا تجعل الـ hover ينزل أو يرفع المحتوى */
+.category-card:hover .category-content {
+    transform: translateY(-50%) !important;
+}
+
+/* العنوان */
+.category-card .category-title {
+    margin: 0 !important;
+}
+
+/* الوصف */
+.category-card .category-description {
+    margin: 18px auto 24px !important;
+}
+
+/* الزر */
+.category-card .category-btn {
+    margin-top: 0 !important;
+}
+
+/* رقم 01 / 02 */
+.category-card .category-content::before {
+    margin-bottom: 18px !important;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 950px) {
+
+    .category-card .category-content {
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+
+        padding: 20px !important;
+    }
+
+    .category-card:hover .category-content {
+        transform: translateY(-50%) !important;
+    }
+}
+</style>
+
+<style id="sandalys-fixes">
+/* =========================================================
+   SANDALYS — requested layout/language fixes
+   Existing CSS is preserved; these are additive overrides.
+   ========================================================= */
+@media (min-width: 951px) {
+    /* Homme / Femme: keep copy in the upper/central area, not at the bottom. */
+    .category-content {
+        top: 50%;
+        bottom: auto;
+        transform: translateY(-50%);
+        padding: 48px;
+    }
+    .category-card:hover .category-content {
+        transform: translateY(calc(-50% - 0px));
+    }
+
+    /* Hero CTA: keep it below the main hero copy instead of over the image. */
+    .hero-content .hero-buttons {
+        position: relative;
+        z-index: 7;
+        margin-top: 34px;
+    }
+}
+
+/* Arabic: prevent inherited LTR positioning from pushing copy over imagery. */
+html[dir="rtl"] .category-content,
+html[dir="rtl"] .hero-content,
+html[dir="rtl"] .video-story-content {
+    direction: rtl;
+}
+
+html[dir="rtl"] .category-content {
+    right: 0;
+    left: auto;
+}
+
+html[dir="rtl"] .category-btn,
+html[dir="rtl"] .btn,
+html[dir="rtl"] .video-story-btn {
+    direction: rtl;
+}
+
+/* Keep media itself visually stable in RTL. */
+html[dir="rtl"] .category-image,
+html[dir="rtl"] .hero-visual img,
+html[dir="rtl"] .brand-video {
+    direction: ltr;
+}
+</style>
+
+
+<style id="sandalys-hero-final-fix">
+/* =========================================================
+   SANDALYS — HERO FINAL FIX
+   1) Keep hero image orientation identical in RTL
+   2) Mobile order: text → button → image
+========================================================= */
+
+/* Keep the hero media visually unchanged when Arabic/RTL is active */
+html[dir="rtl"] .hero-visual,
+html[dir="rtl"] .hero-visual img {
+    direction: ltr !important;
+    unicode-bidi: isolate !important;
+}
+
+html[dir="rtl"] .hero-visual img {
+    transform: scaleX(1) !important;
+}
+
+/* Mobile / tablet hero layout */
+@media (max-width: 950px) {
+    .hero {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .hero-content {
+        order: 1 !important;
+        width: 100% !important;
+        position: relative !important;
+        z-index: 10 !important;
+    }
+
+    .hero-buttons {
+        order: 2 !important;
+        position: relative !important;
+        z-index: 20 !important;
+        margin-top: 28px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .hero-visual {
+        order: 3 !important;
+        position: relative !important;
+        z-index: 1 !important;
+        width: 100% !important;
+        margin-top: 30px !important;
+        transform: none !important;
+    }
+
+    .hero-visual img {
+        transform: scaleX(1) !important;
+    }
+}
+
+/* Small phones */
+@media (max-width: 650px) {
+    .hero {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .hero-content {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .hero-text {
+        width: 100% !important;
+    }
+
+    .hero-buttons {
+        width: 100% !important;
+        max-width: 320px !important;
+        margin: 25px auto 0 !important;
+        order: 2 !important;
+    }
+
+    .hero-visual {
+        order: 3 !important;
+        width: 100% !important;
+        height: 370px !important;
+        margin-top: 30px !important;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8f5ef;
+    color: #29231e;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font: inherit;
+    border: 0;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+    --cream: #f8f5ef;
+    --beige: #e8dccb;
+    --brown: #392d23;
+    --gold: #b49363;
+    --light: #fffdf9;
+    --text-light: #756b61;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    z-index: 1000;
+
+    background: rgba(255,255,255,.72);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(70,50,30,.08);
+
+    transition: .4s ease;
+}
+
+.navbar.scrolled {
+    height: 64px;
+    background: rgba(255,255,255,.92);
+    box-shadow: 0 10px 35px rgba(40,25,10,.08);
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    letter-spacing: 1px;
+    color: var(--brown);
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    list-style: none;
+}
+
+.nav-links a {
+    position: relative;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    color: #4b4036;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--gold);
+
+    transition: width .35s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   LANGUAGE SWITCHER
+========================================================= */
+
+.language-switch {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 20px;
+    white-space: nowrap;
+}
+
+.lang-btn {
+    background: transparent;
+    color: #756b61;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 5px 2px;
+}
+
+.lang-btn.active {
+    color: var(--brown);
+    border-bottom: 1px solid var(--gold);
+}
+
+.language-switch > span {
+    color: #c5b7a4;
+    font-size: 10px;
+}
+
+/* Entire category card is clickable */
+.category-link {
+    cursor: pointer;
+}
+
+@media (max-width: 650px) {
+    .language-switch {
+        margin-left: auto;
+        margin-right: 10px;
+    }
+}
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.menu-btn {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    background: transparent;
+    border: 1px solid #d8cbbb;
+
+    border-radius: 50%;
+}
+
+.menu-btn span {
+    display: block;
+    width: 17px;
+    height: 1px;
+    background: var(--brown);
+    margin: 4px auto;
+    transition: .3s;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    padding: 120px 6% 70px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 80% 30%, #eee2d2, transparent 35%),
+        var(--cream);
+}
+
+
+/* Decorative circle */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 550px;
+    height: 550px;
+
+    right: -130px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    background: #eadfce;
+
+    animation: floatingCircle 7s ease-in-out infinite;
+}
+
+@keyframes floatingCircle {
+
+    0%,100% {
+        transform: translateY(-50%) scale(1);
+    }
+
+    50% {
+        transform: translateY(-50%) scale(1.06);
+    }
+}
+
+
+/* Hero content */
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+
+    width: 42%;
+
+    animation: revealLeft 1.1s cubic-bezier(.22,1,.36,1) forwards;
+}
+
+@keyframes revealLeft {
+
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hero-small {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 22px;
+
+    color: var(--gold);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.hero-small::before {
+    content: "";
+
+    width: 38px;
+    height: 1px;
+
+    background: var(--gold);
+}
+
+.hero h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(55px, 7vw, 100px);
+
+    font-weight: 400;
+
+    line-height: .95;
+
+    letter-spacing: -5px;
+
+    color: var(--brown);
+}
+
+.hero h1 em {
+    color: var(--gold);
+    font-weight: 400;
+}
+
+.hero-text {
+    max-width: 430px;
+
+    margin: 28px 0;
+
+    color: var(--text-light);
+
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    min-height: 52px;
+
+    padding: 0 27px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+
+    transition: .4s ease;
+}
+
+.btn-dark {
+    background: var(--brown);
+    color: white;
+}
+
+.btn-dark:hover {
+    background: var(--gold);
+    transform: translateY(-4px);
+}
+
+.btn-light {
+    border: 1px solid #bba98f;
+    color: var(--brown);
+    background: transparent;
+}
+
+.btn-light:hover {
+    background: var(--brown);
+    color: white;
+    transform: translateY(-4px);
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.hero-visual {
+    position: absolute;
+
+    right: 5%;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 51%;
+    height: 78%;
+
+    z-index: 4;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: revealImage 1.2s cubic-bezier(.22,1,.36,1) .2s both;
+}
+
+@keyframes revealImage {
+
+    from {
+        opacity: 0;
+        transform: translate(70px,-50%) scale(.94);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0,-50%) scale(1);
+    }
+}
+
+
+/*
+   IMPORTANT:
+   contain = image entière visible
+*/
+
+.hero-visual img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    filter: drop-shadow(0 30px 35px rgba(45,30,15,.18));
+
+    transition: transform 1s cubic-bezier(.22,1,.36,1);
+}
+
+.hero-visual:hover img {
+    transform: scale(1.025);
+}
+
+
+/* =========================================================
+   SCROLL
+========================================================= */
+
+.scroll-down {
+    position: absolute;
+
+    bottom: 28px;
+    left: 6%;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #897a69;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    z-index: 10;
+}
+
+.scroll-line {
+    width: 45px;
+    height: 1px;
+
+    background: #a9957c;
+
+    animation: scrollLine 1.8s ease-in-out infinite;
+}
+
+@keyframes scrollLine {
+
+    0%,100% {
+        width: 25px;
+    }
+
+    50% {
+        width: 55px;
+    }
+}
+
+
+/* =========================================================
+   COLLECTION INTRO
+========================================================= */
+
+.intro {
+    padding: 120px 7% 70px;
+
+    text-align: center;
+
+    background: white;
+}
+
+.section-label {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: var(--gold);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.intro h2 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(40px, 5vw, 68px);
+
+    font-weight: 400;
+
+    color: var(--brown);
+}
+
+.intro h2 em {
+    color: var(--gold);
+}
+
+.intro p {
+    max-width: 550px;
+
+    margin: 20px auto 0;
+
+    color: var(--text-light);
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   CATEGORY CARDS
+========================================================= */
+
+.categories {
+    padding: 20px 5% 110px;
+
+    background: white;
+}
+
+.categories-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+    max-width: 1500px;
+
+    margin: auto;
+}
+
+.category-card {
+    position: relative;
+
+    min-height: 650px;
+
+    overflow: hidden;
+
+    background: #eee4d5;
+
+    isolation: isolate;
+}
+
+.category-card::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        180deg,
+        transparent 30%,
+        rgba(35,25,15,.68) 100%
+    );
+
+    z-index: 1;
+}
+
+.category-image {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    /*
+       contain pour éviter de couper les chaussures
+       si l'image contient beaucoup d'espace
+    */
+
+    object-fit: cover;
+
+    transition:
+        transform 1.2s cubic-bezier(.22,1,.36,1),
+        filter 1s ease;
+}
+
+.category-card:hover .category-image {
+    transform: scale(1.045);
+    filter: brightness(.9);
+}
+
+.category-content {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+
+    padding: 48px;
+
+    z-index: 3;
+
+    color: white;
+
+    transform: translateY(12px);
+
+    transition: transform .6s ease;
+}
+
+.category-card:hover .category-content {
+    transform: translateY(0);
+}
+
+.category-label {
+    display: block;
+
+    margin-bottom: 14px;
+
+    color: #e6c994;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+.category-label {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-bottom: 18px !important;
+
+    color: #ffffff !important;
+
+    background: transparent !important;
+
+    border: none !important;
+
+    font-size: 11px !important;
+    font-weight: 600 !important;
+
+    letter-spacing: 1px !important;
+
+    text-shadow: 0 2px 8px rgba(0,0,0,.5);
+}
+
+.category-label::before,
+.category-label::after {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: rgba(255,255,255,.75);
+}
+
+html[dir="rtl"] .category-label {
+    letter-spacing: 0 !important;
+}
+.category-title {
+    font-family: Georgia, serif;
+
+    font-size: clamp(40px, 4vw, 62px);
+
+    font-weight: 400;
+
+    line-height: .98;
+
+    letter-spacing: -2px;
+}
+
+.category-title em {
+    color: #e8c994;
+}
+
+.category-description {
+    max-width: 350px;
+
+    margin: 18px 0 24px;
+
+    color: rgba(255,255,255,.82);
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.category-btn {
+    display: inline-flex;
+
+    padding: 14px 22px;
+
+    border: 1px solid rgba(255,255,255,.6);
+
+    color: white;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1.7px;
+
+    text-transform: uppercase;
+
+    transition: .4s ease;
+}
+
+.category-btn:hover {
+    background: white;
+    color: var(--brown);
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features {
+    padding: 100px 7%;
+
+    background: #f4eee5;
+}
+
+.features-head {
+    text-align: center;
+
+    margin-bottom: 55px;
+}
+
+.features-head h2 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(38px, 5vw, 58px);
+
+    font-weight: 400;
+
+    color: var(--brown);
+}
+
+.features-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    border-top: 1px solid #d6c7b4;
+    border-bottom: 1px solid #d6c7b4;
+}
+
+.feature {
+    padding: 45px 25px;
+
+    text-align: center;
+
+    border-right: 1px solid #d6c7b4;
+}
+
+.feature:last-child {
+    border-right: 0;
+}
+
+.feature-icon {
+    font-size: 24px;
+
+    margin-bottom: 18px;
+
+    color: var(--gold);
+}
+
+.feature h3 {
+    font-family: Georgia, serif;
+
+    font-size: 21px;
+
+    font-weight: 400;
+
+    margin-bottom: 10px;
+}
+
+.feature p {
+    color: #81766b;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta {
+    position: relative;
+
+    padding: 120px 7%;
+
+    text-align: center;
+
+    background: var(--brown);
+
+    color: white;
+
+    overflow: hidden;
+}
+
+.cta::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    left: -200px;
+    top: -200px;
+}
+
+.cta::after {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    right: -180px;
+    bottom: -200px;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+}
+
+.cta h2 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(42px, 6vw, 75px);
+
+    font-weight: 400;
+
+    margin-bottom: 20px;
+}
+
+.cta h2 em {
+    color: #d6b777;
+}
+
+.cta p {
+    max-width: 500px;
+
+    margin: auto auto 30px;
+
+    color: rgba(255,255,255,.7);
+
+    line-height: 1.8;
+}
+
+.cta .btn {
+    background: white;
+    color: var(--brown);
+}
+
+.cta .btn:hover {
+    background: var(--gold);
+    color: white;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    padding: 35px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #241d18;
+
+    color: rgba(255,255,255,.55);
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+.footer-logo {
+    font-family: Georgia, serif;
+
+    font-size: 19px;
+
+    color: white;
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(45px);
+
+    transition:
+        opacity .9s ease,
+        transform .9s cubic-bezier(.22,1,.36,1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .hero {
+        min-height: auto;
+
+        padding-top: 130px;
+        padding-bottom: 80px;
+
+        display: block;
+    }
+
+    .hero-content {
+        width: 100%;
+
+        max-width: 650px;
+
+        margin: auto;
+
+        text-align: center;
+    }
+
+    .hero-small {
+        justify-content: center;
+    }
+
+    .hero-text {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        position: relative;
+
+        top: auto;
+        right: auto;
+
+        transform: none;
+
+        width: 100%;
+        height: 480px;
+
+        margin-top: 20px;
+    }
+
+    .hero-visual img {
+        max-width: 750px;
+    }
+
+    .scroll-down {
+        display: none;
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .category-card {
+        min-height: 500px;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .feature:nth-child(2) {
+        border-right: 0;
+    }
+
+    .feature:nth-child(1),
+    .feature:nth-child(2) {
+        border-bottom: 1px solid #d6c7b4;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        height: 68px;
+
+        padding: 0 20px;
+    }
+
+    .navbar.scrolled {
+        height: 60px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+
+        top: 68px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 25px 20px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+
+        background: rgba(255,255,255,.97);
+
+        backdrop-filter: blur(15px);
+
+        transform: translateY(-150%);
+
+        opacity: 0;
+
+        transition: .4s ease;
+    }
+
+    .nav-links.open {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .hero {
+        padding: 105px 20px 50px;
+
+        min-height: auto;
+    }
+
+    .hero::before {
+        width: 330px;
+        height: 330px;
+
+        right: -130px;
+        top: 63%;
+    }
+
+    .hero h1 {
+        font-size: clamp(48px, 15vw, 68px);
+
+        letter-spacing: -3px;
+    }
+
+    .hero-text {
+        font-size: 13px;
+
+        margin-top: 22px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        width: 100%;
+
+        max-width: 320px;
+
+        margin: auto;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    /*
+       IMPORTANT MOBILE IMAGE
+       Image complète
+    */
+
+    .hero-visual {
+        height: 370px;
+
+        margin-top: 25px;
+    }
+
+    .hero-visual img {
+        object-fit: contain;
+    }
+
+    .intro {
+        padding: 75px 25px 45px;
+    }
+
+    .intro h2 {
+        font-size: 43px;
+    }
+
+    .categories {
+        padding: 10px 10px 75px;
+    }
+
+    .category-card {
+        min-height: 420px;
+    }
+
+    .category-content {
+        padding: 22px 14px;
+    }
+
+    .category-title {
+        font-size: clamp(26px, 7vw, 38px);
+        letter-spacing: -1px;
+    }
+
+    .category-description {
+        font-size: 10px;
+        line-height: 1.5;
+        margin: 12px 0 16px;
+    }
+
+    .category-btn {
+        padding: 11px 13px;
+        font-size: 8px;
+    }
+
+    .features {
+        padding: 75px 20px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature {
+        border-right: 0;
+
+        border-bottom: 1px solid #d6c7b4;
+    }
+
+    .feature:last-child {
+        border-bottom: 0;
+    }
+
+    .feature:nth-child(2) {
+        border-bottom: 1px solid #d6c7b4;
+    }
+
+    .cta {
+        padding: 85px 25px;
+    }
+
+    .cta h2 {
+        font-size: 47px;
+    }
+
+    footer {
+        padding: 30px 20px;
+
+        flex-direction: column;
+
+        gap: 12px;
+
+        text-align: center;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero-visual {
+        height: 320px;
+    }
+
+    .category-card {
+        min-height: 460px;
+    }
+
+    .category-title {
+        font-size: 36px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+
+        transition-duration: .01ms !important;
+    }
+}
+@media (min-width: 951px) {
+
+
+    html[dir="rtl"] .hero-visual {
+        right: auto !important;
+        left: 5% !important;
+        transform: translateY(-50%) !important;
+    }
+}
+.hero-visual {
+    cursor: pointer;
+}
+.hero-visual img {
+    transition: transform 0.7s ease;
+}
+
+.hero-visual:hover img {
+    transform: scale(1.02);
+}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<header class="navbar" id="navbar">
+
+    <a href="#" class="logo">
+        Sandalys <span>DZ</span>
+    </a>
+
+    <nav>
+        <ul class="nav-links" id="navLinks">
+
+            <li>
+                <a href="#accueil">Accueil</a>
+            </li>
+
+            <li>
+                <a href="#collection">Collection</a>
+            </li>
+
+            <li>
+                <a href="#homme">Homme</a>
+            </li>
+
+            <li>
+                <a href="preview.html">Femme</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+    </nav>
+
+    <div class="language-switch" aria-label="Language switcher">
+        <button type="button" class="lang-btn active" data-lang="fr">FR</button>
+        <span>/</span>
+        <button type="button" class="lang-btn" data-lang="ar">AR(عربية)</button>
+    </div>
+
+    <button class="menu-btn" id="menuBtn">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+</header>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero" id="accueil">
+
+    <div class="hero-content">
+
+        <div class="hero-small">
+            Sandalys DZ
+        </div>
+
+        <h1>
+            Votre<br>
+            <em>style.</em>
+        </h1>
+
+        <p class="hero-text">
+            Découvrez une collection pensée pour celles et ceux
+            qui recherchent l'élégance, le confort et un style
+            qui se distingue au quotidien.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#collection" class="btn btn-dark">
+                Découvrir la collection
+            </a>
+
+            
+
+        </div>
+
+    </div>
+
+
+    <!-- IMAGE ENTIÈREMENT VISIBLE -->
+
+   <div class="hero-visual" onclick="document.querySelector('.categories').scrollIntoView({ behavior: 'smooth' });">
+
+    <img
+        src="hero-image.png"
+        alt="Collection Sandalys DZ"
+        data-i18n-attr="alt"
+        data-i18n-key="Collection Sandalys DZ"
+    >
+
+</div>
+
+    <div class="scroll-down">
+
+        <span>Explorer</span>
+
+        <span class="scroll-line"></span>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     INTRO
+========================================================= -->
+
+<section class="intro reveal" id="collection">
+
+    <span class="section-label">
+        La collection
+    </span>
+
+    <h2>
+        Trouvez votre <em>signature.</em>
+    </h2>
+
+    <p>
+        Des modèles sélectionnés avec soin pour créer
+        un équilibre parfait entre confort, élégance
+        et personnalité.
+    </p>
+
+</section>
+
+
+<!-- =========================================================
+     HOMME + FEMME
+========================================================= -->
+
+<section class="categories">
+
+    <div class="categories-grid">
+
+
+        <!-- HOMME -->
+
+        <article
+            class="category-card reveal category-link"
+            id="homme"
+            data-href="https://www.sandalysdz.com/categorie-produit/homme/"
+        >
+
+            <img
+                class="category-image"
+                src="homme.jpg.png"
+                alt="Collection Homme" data-i18n-attr="alt" data-i18n-key="Collection Homme"
+            >
+
+            <div class="category-content">
+
+                <span class="category-label">
+                    Collection Homme
+                </span>
+
+                <h2 class="category-title">
+                    Le style<br>
+                    <em>au quotidien.</em>
+                </h2>
+
+                <p class="category-description">
+                    Des modèles confortables et élégants
+                    conçus pour accompagner votre quotidien.
+                </p>
+
+                <a
+                    href="https://www.sandalysdz.com/categorie-produit/homme/"
+                    class="category-btn"
+                >
+                    Découvrir Homme
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- FEMME -->
+
+        <article
+            class="category-card reveal category-link"
+            id="femme"
+            data-href="https://www.sandalysdz.com/categorie-produit/femme/"
+        >
+
+            <img
+                class="category-image"
+                src="femme.jpg.png"
+                alt="Collection Femme" data-i18n-attr="alt" data-i18n-key="Collection Femme"
+            >
+
+            <div class="category-content">
+
+                <span class="category-label">
+                    Collection Femme
+                </span>
+
+                <h2 class="category-title">
+                    L'élégance<br>
+                    <em>au quotidien.</em>
+                </h2>
+
+                <p class="category-description">
+                    Des modèles pensés pour sublimer
+                    chaque tenue avec simplicité.
+                </p>
+
+                <a
+                    href="https://www.sandalysdz.com/categorie-produit/femme/"
+                    class="category-btn"
+                >
+                    Découvrir Femme
+                </a>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+<!-- =====================================================
+     VIDEO / BRAND STORY SECTION
+===================================================== -->
+
+<section class="video-story">
+
+    <div class="video-story-inner">
+
+        <!-- TEXT -->
+        <div class="video-story-content">
+
+            <span class="video-eyebrow">
+                NOTRE UNIVERS
+            </span>
+
+            <h2>
+                Le confort<br>
+                <em>qui vous suit partout.</em>
+            </h2>
+
+            <p>
+                Des modèles pensés pour accompagner
+                chaque pas, chaque journée et chaque style.
+            </p>
+
+            <a href="#collection" class="video-story-btn">
+                <span>Découvrir la collection</span>
+                <i>→</i>
+            </a>
+
+        </div>
+
+
+        <!-- VIDEO -->
+        <div class="video-story-frame">
+
+            <div class="video-glow"></div>
+
+            <div class="video-wrapper">
+
+                <video
+                    class="brand-video"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                >
+                    <source
+                        src="video-rivera-reel-2-.mp4"
+                        type="video/mp4"
+                    >
+
+                    Votre navigateur ne supporte pas
+                    la lecture vidéo.
+                </video>
+
+                <!-- PLAY INDICATOR -->
+                <div class="video-play">
+                    <span>▶</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<style>
+
+/* =====================================================
+   VIDEO STORY SECTION
+===================================================== */
+
+.video-story {
+    position: relative;
+
+    width: 100%;
+
+    padding: 130px 7%;
+
+    background:
+        radial-gradient(
+            circle at 75% 50%,
+            rgba(211,190,157,.30),
+            transparent 32%
+        ),
+        #f7f3ec;
+
+    overflow: hidden;
+}
+
+
+/* subtle background decoration */
+
+.video-story::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border: 1px solid rgba(174,145,99,.18);
+
+    border-radius: 50%;
+
+    right: -220px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    animation: videoCircle 8s ease-in-out infinite;
+}
+
+@keyframes videoCircle {
+
+    0%, 100% {
+        transform: translateY(-50%) scale(1);
+    }
+
+    50% {
+        transform: translateY(-50%) scale(1.08);
+    }
+}
+
+
+/* =====================================================
+   INNER
+===================================================== */
+
+.video-story-inner {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: .9fr 1fr;
+
+    align-items: center;
+
+    gap: 90px;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.video-story-content {
+
+    opacity: 0;
+
+    transform: translateX(-45px);
+
+    animation: videoTextReveal 1s
+        cubic-bezier(.22,1,.36,1)
+        .2s forwards;
+}
+
+@keyframes videoTextReveal {
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+.video-eyebrow {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 22px;
+
+    color: #b49363;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+.video-eyebrow::before {
+    content: "";
+
+    width: 40px;
+    height: 1px;
+
+    background: #b49363;
+}
+
+
+.video-story-content h2 {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(45px, 5vw, 75px);
+
+    font-weight: 400;
+
+    line-height: .98;
+
+    letter-spacing: -3px;
+
+    color: #392d23;
+}
+
+
+.video-story-content h2 em {
+
+    color: #b49363;
+
+    font-style: italic;
+
+    font-weight: 400;
+}
+
+
+.video-story-content p {
+
+    max-width: 410px;
+
+    margin: 28px 0 34px;
+
+    color: #766b60;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.video-story-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    min-height: 52px;
+
+    padding: 0 22px;
+
+    background: #392d23;
+
+    color: white;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    transition:
+        transform .4s ease,
+        background .4s ease,
+        gap .4s ease;
+}
+
+.video-story-btn i {
+
+    font-size: 18px;
+
+    font-style: normal;
+
+    line-height: 1;
+
+    transition: transform .4s ease;
+}
+
+.video-story-btn:hover {
+
+    background: #b49363;
+
+    transform: translateY(-4px);
+
+    gap: 32px;
+}
+
+.video-story-btn:hover i {
+
+    transform: translateX(4px);
+}
+
+
+/* =====================================================
+   VIDEO FRAME
+===================================================== */
+
+.video-story-frame {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 480px;
+
+    margin: auto;
+
+    opacity: 0;
+
+    transform:
+        translateX(45px)
+        scale(.96);
+
+    animation: videoReveal 1.2s
+        cubic-bezier(.22,1,.36,1)
+        .35s forwards;
+}
+
+@keyframes videoReveal {
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(0)
+            scale(1);
+    }
+}
+
+
+/* =====================================================
+   VIDEO GLOW
+===================================================== */
+
+.video-glow {
+
+    position: absolute;
+
+    inset: -25px;
+
+    border-radius: 40px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(181,148,106,.25),
+            transparent 65%
+        );
+
+    filter: blur(25px);
+
+    z-index: -1;
+}
+
+
+/* =====================================================
+   VIDEO WRAPPER
+===================================================== */
+
+.video-wrapper {
+
+    position: relative;
+
+    width: 100%;
+
+    /*
+       9:16 vertical video
+    */
+
+    aspect-ratio: 9 / 16;
+
+    overflow: hidden;
+
+    background: #e7ded1;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 35px 70px rgba(49,35,20,.20);
+
+    isolation: isolate;
+}
+
+
+/* =====================================================
+   VIDEO
+===================================================== */
+
+.brand-video {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    /*
+       IMPORTANT:
+       The complete video remains visible.
+    */
+
+    object-fit: contain;
+
+    object-position: center;
+
+    background: #e7ded1;
+
+    transition: transform 1s
+        cubic-bezier(.22,1,.36,1);
+}
+
+.video-wrapper:hover .brand-video {
+
+    transform: scale(1.015);
+}
+
+
+/* =====================================================
+   PLAY INDICATOR
+===================================================== */
+
+.video-play {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1);
+
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.18);
+
+    border:
+        1px solid
+        rgba(255,255,255,.65);
+
+    backdrop-filter: blur(8px);
+
+    color: white;
+
+    opacity: .75;
+
+    pointer-events: none;
+
+    animation:
+        playPulse 2.5s
+        ease-in-out
+        infinite;
+
+    transition: .4s ease;
+}
+
+.video-play span {
+
+    font-size: 15px;
+
+    margin-left: 3px;
+}
+
+@keyframes playPulse {
+
+    0%,100% {
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.08);
+    }
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .video-story {
+
+        padding:
+            100px 6%;
+    }
+
+    .video-story-inner {
+
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+
+        text-align: center;
+    }
+
+    .video-story-content {
+
+        max-width: 650px;
+
+        margin: auto;
+    }
+
+    .video-eyebrow {
+
+        justify-content: center;
+    }
+
+    .video-story-content p {
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .video-story-frame {
+
+        max-width: 430px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .video-story {
+
+        padding:
+            80px 20px;
+
+    }
+
+    .video-story::before {
+
+        width: 300px;
+        height: 300px;
+
+        right: -180px;
+    }
+
+    .video-story-inner {
+
+        gap: 42px;
+    }
+
+    .video-story-content h2 {
+
+        font-size: 46px;
+
+        letter-spacing: -2px;
+    }
+
+    .video-story-content p {
+
+        font-size: 13px;
+
+        line-height: 1.8;
+
+        margin:
+            22px auto
+            28px;
+    }
+
+    .video-story-btn {
+
+        width: 100%;
+
+        justify-content: center;
+
+        max-width: 320px;
+    }
+
+    .video-story-frame {
+
+        width: 88%;
+
+        max-width: 350px;
+    }
+
+    .video-play {
+
+        width: 55px;
+        height: 55px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .video-story-content h2 {
+
+        font-size: 40px;
+    }
+
+    .video-story-frame {
+
+        width: 94%;
+    }
+
+}
+
+</style>
+<section class="luxury-services">
+
+  <div class="luxury-container">
+
+    <!-- INTRO -->
+    <div class="luxury-intro">
+
+      <span class="luxury-kicker">
+        Sandalys DZ
+      </span>
+
+      <h2>
+        Une expérience <em>soignée</em>
+      </h2>
+
+      <p>
+        Parce que chaque détail compte, nous vous accompagnons
+        de votre commande jusqu'à sa réception.
+      </p>
+
+    </div>
+
+
+    <!-- SERVICES -->
+    <div class="luxury-grid">
+
+
+      <!-- 01 -->
+      <div class="luxury-card">
+
+        <span class="luxury-number">01</span>
+
+        <div class="luxury-icon">
+
+          <svg viewBox="0 0 24 24"
+               fill="none"
+               stroke-width="1.4"
+               stroke-linecap="round"
+               stroke-linejoin="round">
+
+            <rect x="1" y="7"
+                  width="15"
+                  height="10"
+                  rx="1"/>
+
+            <path d="M16 10h3l3 3v4h-6z"/>
+
+            <circle cx="6" cy="19" r="1.6"/>
+
+            <circle cx="18" cy="19" r="1.6"/>
+
+          </svg>
+
+        </div>
+
+        <h3>Livraison rapide</h3>
+
+        <p>
+          Nous assurons la livraison partout en Algérie via DHD ou Yalidine, à domicile ou au bureau de livraison, selon votre choix.
+        </p>
+
+      </div>
+
+
+      <!-- 02 -->
+      <div class="luxury-card">
+
+        <span class="luxury-number">02</span>
+
+        <div class="luxury-icon">
+
+          <svg viewBox="0 0 24 24"
+               fill="none"
+               stroke-width="1.4"
+               stroke-linecap="round"
+               stroke-linejoin="round">
+
+            <rect x="2" y="5"
+                  width="20"
+                  height="14"
+                  rx="2"/>
+
+            <line x1="2"
+                  y1="10"
+                  x2="22"
+                  y2="10"/>
+
+          </svg>
+
+        </div>
+
+        <h3>Paiement sécurisé</h3>
+
+        <p>
+           paiement à la livraison.
+        </p>
+
+      </div>
+
+
+      <!-- 03 -->
+      <div class="luxury-card">
+
+        <span class="luxury-number">03</span>
+
+        <div class="luxury-icon">
+
+          <svg viewBox="0 0 24 24"
+               fill="none"
+               stroke-width="1.4"
+               stroke-linecap="round"
+               stroke-linejoin="round">
+
+            <path d="M4 4v5h5"/>
+
+            <path d="M20 20v-5h-5"/>
+
+            <path d="M4.5 15a8 8 0 0 0 14.7 2"/>
+
+            <path d="M19.5 9A8 8 0 0 0 4.8 7"/>
+
+          </svg>
+
+        </div>
+
+        <h3>Échange facile</h3>
+
+        <p>
+          2 jours pour changer de modèle ou de taille.
+        </p>
+
+      </div>
+
+
+      <!-- 04 -->
+      <div class="luxury-card">
+
+        <span class="luxury-number">04</span>
+
+        <div class="luxury-icon">
+
+          <svg viewBox="0 0 24 24"
+               fill="none"
+               stroke-width="1.4"
+               stroke-linecap="round"
+               stroke-linejoin="round">
+
+            <path d="
+              M21 11.5
+              a8.4 8.4 0 0 1-8.9 8.4
+              8.5 8.5 0 0 1-4-1
+              L3 20l1.2-5
+              a8.4 8.4 0 1 1 16.8-3.5z
+            "/>
+
+          </svg>
+
+        </div>
+
+        <h3>Support dédié</h3>
+
+        <p>
+          Notre équipe est là pour vous accompagner.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="cta" id="contact">
+
+    <div class="cta-content reveal">
+
+        <span class="section-label">
+            Sandalys DZ
+        </span>
+
+        <h2>
+            Pourquoi <em>nous ?</em>
+        </h2>
+
+         <div class="features-grid">
+
+
+        <div class="feature reveal">
+
+            <div class="feature-icon">
+                ✦
+            </div>
+
+            <h3>
+                Qualité
+            </h3>
+
+            <p>
+                Des modèles sélectionnés
+                avec attention.
+            </p>
+
+        </div>
+
+
+        <div class="feature reveal">
+
+            <div class="feature-icon">
+                ◇
+            </div>
+
+            <h3>
+                Confort
+            </h3>
+
+            <p>
+                Pensés pour vous accompagner
+                au quotidien.
+            </p>
+
+        </div>
+
+
+        <div class="feature reveal">
+
+            <div class="feature-icon">
+                ♢
+            </div>
+
+            <h3>
+                Élégance
+            </h3>
+
+            <p>
+                Un style simple,
+                moderne et intemporel.
+            </p>
+
+        </div>
+
+
+        <div class="feature reveal">
+
+            <div class="feature-icon">
+                ✓
+            </div>
+
+            <h3>
+                Sélection
+            </h3>
+
+            <p>
+                Des collections choisies
+                pour vous.
+            </p>
+
+        </div>
+
+
+    </div>
+
+    </div>
+
+</section>
+<section class="reviews-section" id="reviews" aria-labelledby="reviews-title">
+ <div class="reviews-container">
+  <header class="reviews-heading">
+   <span class="reviews-eyebrow" data-review-i18n="eyebrow">Avis clients</span>
+   <h2 class="reviews-title" id="reviews-title" data-review-i18n="title">Avis de nos clients 🤍</h2>
+   <p class="reviews-subtitle" data-review-i18n="subtitle">Votre confiance nous accompagne à chaque pas.</p>
+  </header>
+  <div class="reviews-carousel">
+   <div class="reviews-track" data-reviews-track tabindex="0" role="region" aria-roledescription="carousel" data-review-aria="carousel">
+    <article class="review-card"><div class="review-card-top"><div class="review-person"><div class="review-avatar" aria-hidden="true">I</div><div><div class="review-name">Imane</div><div class="review-meta" data-review-i18n="alger">Alger</div></div></div><span class="reviews-stars" aria-label="5 étoiles">★★★★★</span></div><blockquote data-review-i18n="r1">Franchement très satisfaite 😍 La paire est encore plus belle en vrai, et la qualité est top !</blockquote></article>
+    <article class="review-card"><div class="review-card-top"><div class="review-person"><div class="review-avatar" aria-hidden="true">S</div><div><div class="review-name">Sarah</div><div class="review-meta" data-review-i18n="blida">Blida</div></div></div><span class="reviews-stars" aria-label="5 étoiles">★★★★★</span></div><blockquote data-review-i18n="r2">J’ai commandé une paire pour moi et une autre pour ma sœur, tout est arrivé comme prévu. Très satisfaite ❤️</blockquote></article>
+    <article class="review-card"><div class="review-card-top"><div class="review-person"><div class="review-avatar" aria-hidden="true">N</div><div><div class="review-name">Nour</div><div class="review-meta" data-review-i18n="oran">Oran</div></div></div><span class="reviews-stars" aria-label="5 étoiles">★★★★★</span></div><blockquote data-review-i18n="r3">Très confortable, surtout pour marcher toute la journée. Je recommande 👌</blockquote></article>
+    <article class="review-card"><div class="review-card-top"><div class="review-person"><div class="review-avatar" aria-hidden="true">L</div><div><div class="review-name">Lina</div><div class="review-meta" data-review-i18n="boumerdes">Boumerdès</div></div></div><span class="reviews-stars" aria-label="5 étoiles">★★★★★</span></div><blockquote data-review-i18n="r4">Livraison rapide et commande bien emballée. Rien à dire 👌</blockquote></article>
+    <article class="review-card"><div class="review-card-top"><div class="review-person"><div class="review-avatar" aria-hidden="true">Y</div><div><div class="review-name">Yasmine</div><div class="review-meta" data-review-i18n="alger">Alger</div></div></div><span class="reviews-stars" aria-label="5 étoiles">★★★★★</span></div><blockquote data-review-i18n="r5">J’hésitais pour la taille, mais le service client m’a bien orientée. La paire me va parfaitement 🥰</blockquote></article>
+    <article class="review-card"><div class="review-card-top"><div class="review-person"><div class="review-avatar" aria-hidden="true">M</div><div><div class="review-name">Meriem</div><div class="review-meta" data-review-i18n="constantine">Constantine</div></div></div><span class="reviews-stars" aria-label="5 étoiles">★★★★★</span></div><blockquote data-review-i18n="r6">Wallah, la qualité est magnifique pour le prix 😍 Je vais sûrement commander une autre paire.</blockquote></article>
+   </div>
+   <div class="reviews-controls"><button class="reviews-arrow" type="button" data-review-prev aria-label="Avis précédent" data-review-aria="prev">‹</button><button class="reviews-arrow" type="button" data-review-next aria-label="Avis suivant" data-review-aria="next">›</button></div>
+   <div class="reviews-dots" data-review-dots aria-label="Choisir un avis"></div>
+  </div>
+  <div class="reviews-bottom"><button class="reviews-add" type="button" data-review-open data-review-i18n="add">💬 Laisser un avis</button></div>
+ </div>
+</section>
+<div class="review-modal" data-review-modal hidden role="dialog" aria-modal="true" aria-labelledby="review-modal-title">
+ <div class="review-modal-panel"><div class="review-modal-head"><h3 id="review-modal-title" data-review-i18n="modalTitle">Laisser un avis</h3><button class="review-modal-close" type="button" data-review-close aria-label="Fermer">×</button></div>
+  <form class="review-form" data-review-form>
+   <div><label for="review-name" data-review-i18n="nameLabel">Nom</label><input id="review-name" name="name" required maxlength="60" autocomplete="name"></div>
+   <div><label for="review-wilaya" data-review-i18n="wilayaLabel">Wilaya</label><input id="review-wilaya" name="wilaya" required maxlength="60"></div>
+   <fieldset style="border:0;padding:0;margin:0"><legend class="review-form-label" data-review-i18n="ratingLabel" style="font-size:.88rem;margin-bottom:6px">Votre note</legend><div class="rating-options" role="radiogroup" aria-label="Note de 1 à 5"><input id="rating5" type="radio" name="rating" value="5" required><label for="rating5" aria-label="5 étoiles">★</label><input id="rating4" type="radio" name="rating" value="4"><label for="rating4" aria-label="4 étoiles">★</label><input id="rating3" type="radio" name="rating" value="3"><label for="rating3" aria-label="3 étoiles">★</label><input id="rating2" type="radio" name="rating" value="2"><label for="rating2" aria-label="2 étoiles">★</label><input id="rating1" type="radio" name="rating" value="1"><label for="rating1" aria-label="1 étoile">★</label></div></fieldset>
+   <div><label for="review-comment" data-review-i18n="commentLabel">Votre commentaire</label><textarea id="review-comment" name="comment" required minlength="5" maxlength="500"></textarea></div>
+   <button class="review-submit" type="submit" data-review-i18n="submit">Envoyer</button><p class="review-success" data-review-success hidden role="status" data-review-i18n="success">Merci pour votre avis 🤍 Il sera vérifié avant publication.</p>
+  </form>
+ </div>
+</div>
+<!-- =====================================================
+     SOCIAL MEDIA SECTION
+===================================================== -->
+
+<section class="social-section" id="social">
+
+    <div class="social-container">
+
+        <div class="social-header">
+
+            <span class="social-eyebrow">
+                RESTEZ CONNECTÉS
+            </span>
+
+            <h2>
+                Suivez <em>Sandalys DZ</em>
+            </h2>
+
+            <p>
+                Découvrez nos nouveautés, nos inspirations
+                et nos collections sur nos réseaux sociaux.
+            </p>
+
+        </div>
+
+
+        <!-- SOCIAL CARDS -->
+
+        <div class="social-grid">
+
+
+            <!-- INSTAGRAM -->
+
+            <a
+                href="https://www.instagram.com/sandalys_mode"
+                class="social-card instagram"
+                aria-label="Instagram Sandalys DZ" data-i18n-attr="aria-label" data-i18n-key="Instagram Sandalys DZ"
+            >
+
+                <div class="social-icon">
+
+                    <svg viewBox="0 0 24 24">
+                        <rect
+                            x="3"
+                            y="3"
+                            width="18"
+                            height="18"
+                            rx="5"
+                        />
+                        <circle cx="12" cy="12" r="4"/>
+                        <circle
+                            cx="17.5"
+                            cy="6.5"
+                            r="1"
+                            class="fill"
+                        />
+                    </svg>
+
+                </div>
+
+                <div class="social-info">
+
+                    <span>Instagram</span>
+
+                    <strong>
+                        @sandalys.dz
+                    </strong>
+
+                </div>
+
+                <span class="social-arrow">
+                    ↗
+                </span>
+
+            </a>
+
+
+            <!-- FACEBOOK -->
+
+            <a
+                href="https://www.facebook.com/profile.php?id=61576618387785"
+                class="social-card facebook"
+                aria-label="Facebook Sandalys DZ" data-i18n-attr="aria-label" data-i18n-key="Facebook Sandalys DZ"
+            >
+
+                <div class="social-icon">
+
+                    <svg viewBox="0 0 24 24">
+                        <path d="M14 8h3V4h-3c-3.3 0-5 1.7-5 5v3H6v4h3v4h4v-4h3l1-4h-4V9c0-.7.3-1 1-1z"/>
+                    </svg>
+
+                </div>
+
+                <div class="social-info">
+
+                    <span>Facebook</span>
+
+                    <strong>
+                        Sandalys DZ
+                    </strong>
+
+                </div>
+
+                <span class="social-arrow">
+                    ↗
+                </span>
+
+            </a>
+
+
+            <!-- TIKTOK -->
+
+            <a
+                href="https://www.tiktok.com/@sandalysmode?fbclid=IwY2xjawUjtMdleHRuA2FlbQIxMABwZG9mAWJyaWQRMWdHcGw4d0FmSDlMclA0eGtzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEeO0637rBaX1vOthgm-F8s5-01ppX-w4V3ENzh3APyt94blE_TpV5JM8uVW8g_aem_S5ZdDKJMEielKvRkDOJ8xA"
+                class="social-card tiktok"
+                aria-label="TikTok Sandalys DZ" data-i18n-attr="aria-label" data-i18n-key="TikTok Sandalys DZ"
+            >
+
+                <div class="social-icon">
+
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15 4c.4 2.2 1.7 3.6 4 3.8v3.2c-1.6-.1-3-.6-4-1.5v5.2c0 3.7-2.2 5.8-5.3 5.8A5.5 5.5 0 0 1 4 15c0-3.2 2.6-5.6 5.8-5.6.3 0 .7 0 1 .1v3.3a3 3 0 0 0-1-.2c-1.2 0-2.2.9-2.2 2.2s1 2.2 2.2 2.2c1.4 0 2.2-.8 2.2-2.6V4h3z"/>
+                    </svg>
+
+                </div>
+
+                <div class="social-info">
+
+                    <span>TikTok</span>
+
+                    <strong>
+                        @sandalys.dz
+                    </strong>
+
+                </div>
+
+                <span class="social-arrow">
+                    ↗
+                </span>
+
+            </a>
+
+
+            <!-- WHATSAPP -->
+
+            <a
+                href="https://wa.me/213563713252"
+                class="social-card whatsapp"
+                aria-label="WhatsApp Sandalys DZ" data-i18n-attr="aria-label" data-i18n-key="WhatsApp Sandalys DZ"
+                target="_blank"
+                rel="noopener"
+            >
+
+                <div class="social-icon">
+
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.2 1.7 6L0 24l6.3-1.7a12 12 0 0 0 5.7 1.5h.1c6.5 0 11.8-5.3 11.8-11.9 0-3.2-1.2-6.2-3.4-8.4zM12 21.8h-.1c-1.8 0-3.6-.5-5.1-1.5l-.4-.2-3.7 1 1-3.6-.2-.4a9.7 9.7 0 0 1-1.5-5.2C2 6.5 6.5 2 12 2c2.6 0 5 1 6.9 2.9s2.9 4.3 2.9 6.9c0 5.5-4.4 10-9.8 10zm5.4-7.4c-.3-.1-1.8-.9-2.1-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-1.5-.7-2.5-1.2-3.5-2.8-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.5 0-.1-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3 1.8.8 2.5.9 3.4.8.5-.1 1.8-.7 2.1-1.4.3-.7.3-1.3.2-1.4-.2-.2-.4-.2-.8-.4z"/>
+                    </svg>
+
+                </div>
+
+                <div class="social-info">
+
+                    <span>WhatsApp</span>
+
+                    <strong>
+                        Contactez-nous
+                    </strong>
+
+                </div>
+
+                <span class="social-arrow">
+                    ↗
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <div class="social-bottom">
+            <span></span>
+            <p>
+                Votre style. Votre univers. Sandalys DZ.
+            </p>
+            <span></span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<style>
+
+/* =====================================================
+   SOCIAL SECTION
+===================================================== */
+
+.social-section {
+
+    position: relative;
+
+    padding: 110px 6%;
+
+    background: #fffdf9;
+
+    overflow: hidden;
+}
+
+
+/* Background decoration */
+
+.social-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    left: -280px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(180,148,99,.12);
+
+    box-shadow:
+        0 0 0 70px rgba(180,148,99,.025),
+        0 0 0 140px rgba(180,148,99,.018);
+
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.social-container {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.social-header {
+
+    text-align: center;
+
+    margin-bottom: 55px;
+
+}
+
+.social-eyebrow {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+
+    color: #b49363;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+}
+
+.social-eyebrow::before,
+.social-eyebrow::after {
+
+    content: "";
+
+    width: 30px;
+
+    height: 1px;
+
+    background: #b49363;
+
+}
+
+
+.social-header h2 {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(42px, 5vw, 68px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: #392d23;
+
+    letter-spacing: -2px;
+
+}
+
+.social-header h2 em {
+
+    color: #b49363;
+
+    font-style: italic;
+
+    font-weight: 400;
+
+}
+
+
+.social-header p {
+
+    max-width: 530px;
+
+    margin: 20px auto 0;
+
+    color: #7c7166;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.social-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 16px;
+
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.social-card {
+
+    position: relative;
+
+    min-height: 150px;
+
+    padding: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    background: #f7f3ec;
+
+    border: 1px solid #e8dfd2;
+
+    overflow: hidden;
+
+    transition:
+        transform .5s
+        cubic-bezier(.22,1,.36,1),
+
+        box-shadow .5s ease,
+
+        border-color .5s ease;
+
+}
+
+
+/* Hover light */
+
+.social-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: -90px;
+    bottom: -90px;
+
+    border-radius: 50%;
+
+    background: rgba(180,148,99,.10);
+
+    transition:
+        transform .7s ease;
+
+}
+
+.social-card:hover::before {
+
+    transform: scale(2.2);
+
+}
+
+
+.social-card:hover {
+
+    transform: translateY(-7px);
+
+    border-color: rgba(180,148,99,.35);
+
+    box-shadow:
+        0 25px 50px rgba(52,38,23,.10);
+
+}
+
+
+/* =====================================================
+   ICON
+===================================================== */
+
+.social-icon {
+
+    position: relative;
+
+    z-index: 2;
+
+    flex-shrink: 0;
+
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: white;
+
+    border: 1px solid #e4d9ca;
+
+    transition:
+        transform .5s ease,
+        background .5s ease;
+
+}
+
+.social-card:hover .social-icon {
+
+    transform:
+        rotate(-8deg)
+        scale(1.08);
+
+}
+
+
+.social-icon svg {
+
+    width: 27px;
+    height: 27px;
+
+    fill: none;
+
+    stroke: #392d23;
+
+    stroke-width: 1.7;
+
+}
+
+.social-icon svg .fill {
+
+    fill: #392d23;
+
+    stroke: none;
+
+}
+
+
+/* TikTok / Facebook / WhatsApp paths */
+
+.facebook .social-icon svg,
+.tiktok .social-icon svg,
+.whatsapp .social-icon svg {
+
+    fill: #392d23;
+
+    stroke: none;
+
+}
+
+
+/* =====================================================
+   INFO
+===================================================== */
+
+.social-info {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+}
+
+.social-info span {
+
+    color: #9a8b7b;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+}
+
+.social-info strong {
+
+    color: #392d23;
+
+    font-family: Georgia, serif;
+
+    font-size: 20px;
+
+    font-weight: 400;
+
+}
+
+
+/* =====================================================
+   ARROW
+===================================================== */
+
+.social-arrow {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-left: auto;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #d8cbbb;
+
+    border-radius: 50%;
+
+    color: #392d23;
+
+    font-size: 17px;
+
+    transition:
+        transform .4s ease,
+        background .4s ease,
+        color .4s ease;
+
+}
+
+.social-card:hover .social-arrow {
+
+    transform: rotate(45deg);
+
+    background: #392d23;
+
+    color: white;
+
+}
+
+
+/* =====================================================
+   BOTTOM
+===================================================== */
+
+.social-bottom {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    margin-top: 55px;
+
+}
+
+.social-bottom span {
+
+    width: 45px;
+
+    height: 1px;
+
+    background: #d9ccbc;
+
+}
+
+.social-bottom p {
+
+    color: #a09283;
+
+    font-family: Georgia, serif;
+
+    font-size: 13px;
+
+    font-style: italic;
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .social-section {
+
+        padding: 90px 5%;
+
+    }
+
+    .social-grid {
+
+        grid-template-columns: 1fr;
+
+        max-width: 650px;
+
+        margin: auto;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .social-section {
+
+        padding: 75px 20px;
+
+    }
+
+    .social-header {
+
+        margin-bottom: 38px;
+
+    }
+
+    .social-header h2 {
+
+        font-size: 45px;
+
+    }
+
+    .social-header p {
+
+        font-size: 12px;
+
+    }
+
+    .social-card {
+
+        min-height: 120px;
+
+        padding: 20px;
+
+        gap: 15px;
+
+    }
+
+    .social-icon {
+
+        width: 52px;
+        height: 52px;
+
+    }
+
+    .social-icon svg {
+
+        width: 23px;
+        height: 23px;
+
+    }
+
+    .social-info strong {
+
+        font-size: 17px;
+
+    }
+
+    .social-arrow {
+
+        width: 32px;
+        height: 32px;
+
+        font-size: 14px;
+
+    }
+
+    .social-bottom {
+
+        margin-top: 40px;
+
+        gap: 10px;
+
+    }
+
+    .social-bottom span {
+
+        width: 20px;
+
+    }
+
+    .social-bottom p {
+
+        font-size: 11px;
+
+        text-align: center;
+
+    }
+
+}
+
+
+/* =====================================================
+   EXTRA SMALL
+===================================================== */
+
+@media (max-width: 370px) {
+
+    .social-card {
+
+        padding: 16px;
+
+    }
+
+    .social-icon {
+
+        width: 46px;
+        height: 46px;
+
+    }
+
+    .social-info strong {
+
+        font-size: 15px;
+
+    }
+
+}
+
+</style>
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        Sandalys DZ
+    </div>
+
+    <div>
+        © 2026 — Tous droits réservés
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<style>
+/* Avis clients — inherits the site's existing typography and warm neutral palette */
+.reviews-section{padding:clamp(58px,7vw,96px) 20px;background:#fbf9f5;color:#302a24;overflow:hidden}
+.reviews-container{width:min(1160px,100%);margin:0 auto}
+.reviews-heading{text-align:center;margin:0 auto 32px;max-width:700px}
+.reviews-eyebrow{display:block;color:#9b7950;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px}
+.reviews-title{font-family:inherit;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:500;line-height:1.2;margin:0 0 12px}
+.reviews-subtitle{color:#766b60;line-height:1.8;font-size:.98rem;margin:0}
+.reviews-stars{letter-spacing:.14em;color:#b58b4b;white-space:nowrap}
+.reviews-carousel{position:relative}
+.reviews-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 40px)/3);gap:20px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:8px 2px 18px;scrollbar-width:none;outline:none}
+.reviews-track::-webkit-scrollbar{display:none}
+.review-card{min-width:0;scroll-snap-align:start;background:#fff;border:1px solid #e8dfd4;border-radius:16px;padding:24px;min-height:240px;box-shadow:0 8px 24px rgba(65,48,30,.045);display:flex;flex-direction:column;gap:17px}
+.review-card-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.review-person{display:flex;align-items:center;gap:11px;min-width:0}
+.review-avatar{width:44px;height:44px;flex:0 0 44px;border-radius:50%;display:grid;place-items:center;background:#eee5da;color:#6a5137;font-weight:600}
+.review-name{font-weight:600;font-size:.95rem}.review-meta{font-size:.8rem;color:#82766a;margin-top:4px}.review-card blockquote{color:#5e554c;line-height:1.85;font-size:.93rem;margin:0;overflow-wrap:anywhere}
+.reviews-controls{display:flex;align-items:center;justify-content:center;gap:16px;margin:20px 0 14px}.reviews-arrow{width:42px;height:42px;border:1px solid #d9cbbb;border-radius:50%;background:#fff;color:#57483a;display:grid;place-items:center;font-size:1.25rem;cursor:pointer;transition:background .2s,border-color .2s}.reviews-arrow:hover{background:#eee5da;border-color:#bca78e}.reviews-arrow:focus-visible,.reviews-dots button:focus-visible,.reviews-add:focus-visible,.review-modal button:focus-visible,.review-modal input:focus-visible,.review-modal textarea:focus-visible,.review-modal select:focus-visible{outline:3px solid #b58b4b;outline-offset:3px}
+.reviews-dots{display:flex;justify-content:center;gap:8px;margin:8px 0 26px}.reviews-dots button{width:8px;height:8px;padding:0;border:0;border-radius:50%;background:#d8cbbb;cursor:pointer}.reviews-dots button[aria-current="true"]{background:#8d6c43;transform:scale(1.25)}
+.reviews-bottom{text-align:center}.reviews-add{border:1px solid #8d6c43;border-radius:999px;padding:13px 24px;background:#8d6c43;color:#fff;font:inherit;font-size:.93rem;cursor:pointer;transition:background .2s}.reviews-add:hover{background:#725433}.reviews-note{font-size:.76rem;color:#8a7e71;margin:13px 0 0}
+.review-modal[hidden]{display:none}.review-modal{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:18px;background:rgba(28,24,20,.55)}.review-modal-panel{position:relative;width:min(500px,100%);max-height:min(90vh,760px);overflow:auto;background:#fffdf9;border:1px solid #e8dfd4;border-radius:20px;padding:28px;box-shadow:0 20px 70px rgba(0,0,0,.18)}.review-modal-head{display:flex;align-items:start;justify-content:space-between;gap:16px;margin-bottom:20px}.review-modal h3{font-size:1.45rem;font-weight:500;margin:0}.review-modal-close{border:0;background:transparent;color:#57483a;font-size:1.6rem;cursor:pointer;line-height:1}.review-form{display:grid;gap:14px}.review-form label{display:block;font-size:.88rem;color:#51473e;margin-bottom:6px}.review-form input,.review-form select,.review-form textarea{box-sizing:border-box;width:100%;border:1px solid #dcd1c4;border-radius:10px;background:#fff;padding:12px 13px;color:#302a24;font:inherit;font-size:.95rem}.review-form textarea{min-height:110px;resize:vertical}.review-form .rating-options{display:flex;gap:7px;flex-direction:row-reverse;justify-content:flex-end}.rating-options input{position:absolute;opacity:0;width:1px;height:1px}.rating-options label{margin:0;font-size:1.65rem;color:#d8cbbb;cursor:pointer}.rating-options input:checked~label,.rating-options label:hover,.rating-options label:hover~label{color:#b58b4b}.review-submit{border:0;border-radius:999px;background:#8d6c43;color:#fff;padding:13px 20px;font:inherit;cursor:pointer}.review-success{padding:14px;border-radius:12px;background:#edf4eb;color:#315b35;line-height:1.7;margin:0}.review-success[hidden]{display:none}
+html[dir="rtl"] .reviews-section{text-align:right}html[dir="rtl"] .reviews-heading,html[dir="rtl"] .reviews-controls,html[dir="rtl"] .reviews-dots,html[dir="rtl"] .reviews-bottom{text-align:center}html[dir="rtl"] .review-modal{text-align:right}html[dir="rtl"] .rating-options{flex-direction:row}
+@media(min-width:601px) and (max-width:899px){.reviews-track{grid-auto-columns:calc((100% - 20px)/2)}}
+@media(max-width:600px){.reviews-section{padding-inline:16px}.reviews-track{grid-auto-columns:100%;gap:14px}.review-card{padding:23px;min-height:225px}.review-modal-panel{padding:22px}}
+@media(prefers-reduced-motion:reduce){.reviews-track{scroll-behavior:auto}.reviews-arrow,.reviews-add{transition:none}}
+</style>
+
+<script>
+(function(){
+ const track=document.querySelector('[data-reviews-track]'); if(!track)return;
+ const cards=[...track.querySelectorAll('.review-card')], dots=document.querySelector('[data-review-dots]');
+ const prev=document.querySelector('[data-review-prev]'),next=document.querySelector('[data-review-next]');
+ const modal=document.querySelector('[data-review-modal]'),form=document.querySelector('[data-review-form]'),success=document.querySelector('[data-review-success]');
+ let index=0, lastFocus=null;
+ const langData={
+  fr:{eyebrow:'Avis clients',title:'Avis de nos clients 🤍',subtitle:'Votre confiance nous accompagne à chaque pas.',alger:'Alger',blida:'Blida',oran:'Oran',boumerdes:'Boumerdès',constantine:'Constantine',r1:'Franchement très satisfaite 😍 La paire est encore plus belle en vrai, et la qualité est top !',r2:'J’ai commandé une paire pour moi et une autre pour ma sœur, tout est arrivé comme prévu. Très satisfaite ❤️',r3:'Très confortable, surtout pour marcher toute la journée. Je recommande 👌',r4:'Livraison rapide et commande bien emballée. Rien à dire 👌',r5:'J’hésitais pour la taille, mais le service client m’a bien orientée. La paire me va parfaitement 🥰',r6:'Wallah, la qualité est magnifique pour le prix 😍 Je vais sûrement commander une autre paire.',add:'💬 Laisser un avis',modalTitle:'Laisser un avis',nameLabel:'Nom',wilayaLabel:'Wilaya',ratingLabel:'Votre note',commentLabel:'Votre commentaire',submit:'Envoyer',success:'Merci pour votre avis 🤍 Il sera vérifié avant publication.',carousel:'Carrousel des avis clients',prev:'Avis précédent',next:'Avis suivant',close:'Fermer',dots:'Choisir un avis',stars:'étoiles',oneStar:'étoile'},
+  ar:{eyebrow:'آراء الزبائن',title:'آراء زبائننا 🤍',subtitle:'ثقتكم هي أجمل ما يرافقنا في كل خطوة.',alger:'الجزائر العاصمة',blida:'البليدة',oran:'وهران',boumerdes:'بومرداس',constantine:'قسنطينة',r1:'بصراحة عجبتني بزاف 😍، في الواقع أجمل من الصور والـ qualité top !',r2:'طلبت زوج ليا ولأختي، وصلنا في الوقت والـ qualité هايلة ❤️',r3:'مريحة بزاف، خاصة كي نلبسها نهار كامل. ننصح بيها 👌',r4:'Livraison rapide والطلب وصل bien emballé. Rien à dire 👌',r5:'كنت خايفة من la taille بصح الـ service client عاونوني مليح، جاتني parfaite 🥰',r6:'Wallah la qualité هايلة بالنسبة للسعر 😍 أكيد نعاود نطلب مرة أخرى.',add:'💬 أضف رأيك',modalTitle:'خلّي رأيك',nameLabel:'الاسم',wilayaLabel:'الولاية',ratingLabel:'التقييم',commentLabel:'تعليقك',submit:'إرسال',success:'شكرًا على رأيك 🤍 سيتم مراجعته قبل نشره.',carousel:'عارض آراء الزبائن',prev:'الرأي السابق',next:'الرأي التالي',close:'إغلاق',dots:'اختيار رأي',stars:'نجوم',oneStar:'نجمة'}
+ };
+ function currentLang(){return document.documentElement.lang==='ar'?'ar':'fr'}
+ function applyLang(lang){const d=langData[lang]||langData.fr;document.querySelectorAll('[data-review-i18n]').forEach(el=>{const k=el.dataset.reviewI18n;if(d[k])el.textContent=d[k]});track.setAttribute('aria-label',d.carousel);prev.setAttribute('aria-label',d.prev);next.setAttribute('aria-label',d.next);modal.querySelector('[data-review-close]').setAttribute('aria-label',d.close);dots.setAttribute('aria-label',d.dots);cards.forEach(card=>card.querySelector('.reviews-stars').setAttribute('aria-label','5 '+d.stars));document.querySelectorAll('.rating-options label').forEach((el,i)=>el.setAttribute('aria-label',(5-i)+' '+((5-i)===1?d.oneStar:d.stars)));}
+ function buildDots(){dots.innerHTML='';cards.forEach((_,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label',(i+1)+' / '+cards.length);b.addEventListener('click',()=>go(i));dots.appendChild(b)});}
+ function go(i){index=Math.max(0,Math.min(cards.length-1,i));cards[index].scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'nearest',inline:'start'});updateDots()}
+ function updateDots(){const w=cards[0].getBoundingClientRect().width+parseFloat(getComputedStyle(track).columnGap||0);if(w>0){const pos=Math.abs(track.scrollLeft);index=Math.max(0,Math.min(cards.length-1,Math.round(pos/w)));} [...dots.children].forEach((b,i)=>b.setAttribute('aria-current',i===index?'true':'false'));}
+ prev.addEventListener('click',()=>go(index-1));next.addEventListener('click',()=>go(index+1));track.addEventListener('scroll',()=>requestAnimationFrame(updateDots),{passive:true});track.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();go(index+(document.documentElement.dir==='rtl'?-1:1))}if(e.key==='ArrowLeft'){e.preventDefault();go(index+(document.documentElement.dir==='rtl'?1:-1))}});
+ const observer=new ResizeObserver(updateDots);observer.observe(track);buildDots();
+ document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>setTimeout(()=>applyLang(currentLang()),0)));applyLang(currentLang());
+ function closeModal(){modal.hidden=true;if(lastFocus)lastFocus.focus()}
+ document.querySelector('[data-review-open]').addEventListener('click',()=>{lastFocus=document.activeElement;modal.hidden=false;success.hidden=true;document.getElementById('review-name').focus()});document.querySelector('[data-review-close]').addEventListener('click',closeModal);modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',e=>{if(!modal.hidden&&e.key==='Escape')closeModal()});
+ form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;success.hidden=false;form.querySelector('[type="submit"]').disabled=true;form.querySelector('[type="submit"]').textContent=currentLang()==='ar'?'تم الإرسال':'Envoyé';});
+})();
+</script>
+
+<script>
+
+/* =========================================================
+   NAVBAR SCROLL
+========================================================= */
+
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 40) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+
+});
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+
+    navLinks.classList.toggle("open");
+
+});
+
+
+/* Fermer le menu après clic */
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navLinks.classList.remove("open");
+
+    });
+
+});
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+const observer = new IntersectionObserver(
+
+    (entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("active");
+
+                observer.unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold: 0.12
+    }
+
+);
+
+
+revealElements.forEach(element => {
+
+    observer.observe(element);
+
+});
+
+
+/* =========================================================
+   IMAGE ERROR FALLBACK
+========================================================= */
+
+document.querySelectorAll("img").forEach(image => {
+
+    image.addEventListener("error", () => {
+
+        image.style.opacity = "0";
+
+        console.warn(
+            "Image introuvable : " + image.src
+        );
+
+    });
+
+});
+
+
+/* =========================================================
+   SMOOTH BUTTON EFFECT
+========================================================= */
+
+document.querySelectorAll(".btn, .category-btn")
+.forEach(button => {
+
+    button.addEventListener("click", function(e) {
+
+        const target = this.getAttribute("href");
+
+        if (
+            target &&
+            target.startsWith("#") &&
+            document.querySelector(target)
+        ) {
+
+            e.preventDefault();
+
+            document.querySelector(target)
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+
+        }
+
+    });
+
+});
+
+
+/* =========================================================
+   LANGUAGE SWITCHER — FR / AR
+========================================================= */
+
+
+const translations = {
+    fr: {
+        "Sandalys DZ — Services": "Sandalys DZ — Services",
+        "Accueil": "Accueil",
+        "Collection": "Collection",
+        "Homme": "Homme",
+        "Femme": "Femme",
+        "Contact": "Contact",
+        "Sandalys DZ": "Sandalys DZ",
+        "Votre": "Votre",
+        "style.": "style.",
+        "Découvrez une collection pensée pour celles et ceux qui recherchent l'élégance, le confort et un style qui se distingue au quotidien.": "Découvrez une collection pensée pour celles et ceux qui recherchent l'élégance, le confort et un style qui se distingue au quotidien.",
+        "Découvrir la collection": "Découvrir la collection",
+        "Explorer": "Explorer",
+        "La collection": "La collection",
+        "Trouvez votre": "Trouvez votre",
+        "signature.": "signature.",
+        "Des modèles sélectionnés avec soin pour créer un équilibre parfait entre confort, élégance et personnalité.": "Des modèles sélectionnés avec soin pour créer un équilibre parfait entre confort, élégance et personnalité.",
+        "Collection Homme": "Collection Homme",
+        "Le style": "Le style",
+        "au quotidien.": "au quotidien.",
+        "Des modèles confortables et élégants conçus pour accompagner votre quotidien.": "Des modèles confortables et élégants conçus pour accompagner votre quotidien.",
+        "Découvrir Homme": "Découvrir Homme",
+        "Collection Femme": "Collection Femme",
+        "L'élégance": "L'élégance",
+        "Des modèles pensés pour sublimer chaque tenue avec simplicité.": "Des modèles pensés pour sublimer chaque tenue avec simplicité.",
+        "Découvrir Femme": "Découvrir Femme",
+        "NOTRE UNIVERS": "NOTRE UNIVERS",
+        "Le confort": "Le confort",
+        "qui vous suit partout.": "qui vous suit partout.",
+        "Des modèles pensés pour accompagner chaque pas, chaque journée et chaque style.": "Des modèles pensés pour accompagner chaque pas, chaque journée et chaque style.",
+        "Votre navigateur ne supporte pas la lecture vidéo.": "Votre navigateur ne supporte pas la lecture vidéo.",
+        "Une expérience": "Une expérience",
+        "soignée": "soignée",
+        "Parce que chaque détail compte, nous vous accompagnons de votre commande jusqu'à sa réception.": "Parce que chaque détail compte, nous vous accompagnons de votre commande jusqu'à sa réception.",
+        "Livraison rapide": "Livraison rapide",
+        "Nous assurons la livraison partout en Algérie via DHD ou Yalidine, à domicile ou au bureau de livraison, selon votre choix.": "Nous assurons la livraison partout en Algérie via DHD ou Yalidine, à domicile ou au bureau de livraison, selon votre choix.",
+        "Paiement sécurisé": "Paiement sécurisé",
+        "Carte bancaire ou paiement à la livraison.": "Carte bancaire ou paiement à la livraison.",
+        "Échange facile": "Échange facile",
+        "14 jours pour changer de modèle ou de taille.": "14 jours pour changer de modèle ou de taille.",
+        "Support dédié": "Support dédié",
+        "Notre équipe est là pour vous accompagner.": "Notre équipe est là pour vous accompagner.",
+        "Pourquoi": "Pourquoi",
+        "nous ?": "nous ?",
+        "Qualité": "Qualité",
+        "Des modèles sélectionnés avec attention.": "Des modèles sélectionnés avec attention.",
+        "Confort": "Confort",
+        "Pensés pour vous accompagner au quotidien.": "Pensés pour vous accompagner au quotidien.",
+        "Élégance": "Élégance",
+        "Un style simple, moderne et intemporel.": "Un style simple, moderne et intemporel.",
+        "Sélection": "Sélection",
+        "Des collections choisies pour vous.": "Des collections choisies pour vous.",
+        "RESTEZ CONNECTÉS": "RESTEZ CONNECTÉS",
+        "Suivez": "Suivez",
+        "Découvrez nos nouveautés, nos inspirations et nos collections sur nos réseaux sociaux.": "Découvrez nos nouveautés, nos inspirations et nos collections sur nos réseaux sociaux.",
+        "Instagram": "Instagram",
+        "Facebook": "Facebook",
+        "TikTok": "TikTok",
+        "WhatsApp": "WhatsApp",
+        "Contactez-nous": "Contactez-nous",
+        "Votre style. Votre univers. Sandalys DZ.": "Votre style. Votre univers. Sandalys DZ.",
+        "© 2026 — Tous droits réservés": "© 2026 — Tous droits réservés",
+        "Collection Sandalys DZ": "Collection Sandalys DZ",
+        "Instagram Sandalys DZ": "Instagram Sandalys DZ",
+        "Facebook Sandalys DZ": "Facebook Sandalys DZ",
+        "TikTok Sandalys DZ": "TikTok Sandalys DZ",
+        "WhatsApp Sandalys DZ": "WhatsApp Sandalys DZ",
+        "Témoignages": "Témoignages",
+        "Vos avis, notre plus belle récompense.": "Vos avis, notre plus belle récompense.",
+        "Découvrez les impressions de nos clients après leur expérience Sandalys DZ.": "Découvrez les impressions de nos clients après leur expérience Sandalys DZ.",
+        "La confiance de nos clients": "La confiance de nos clients",
+        "Commande vérifiée": "Commande vérifiée",
+        "✓ Cliente Sandalys": "✓ Cliente Sandalys",
+        "✓ Client Sandalys": "✓ Client Sandalys",
+        "Les avis présentés sont des exemples de mise en page à remplacer par les témoignages réels de vos clients.": "Les avis présentés sont des exemples de mise en page à remplacer par les témoignages réels de vos clients."
+    },
+    ar: {
+        "Sandalys DZ — Services": "Sandalys DZ — الخدمات",
+        "Accueil": "الرئيسية",
+        "Collection": "المجموعة",
+        "Homme": "الرجال",
+        "Femme": "النساء",
+        "Contact": "اتصل بنا",
+        "Sandalys DZ": "Sandalys DZ",
+        "Votre": "أسلوبك",
+        "style.": "الخاص.",
+        "Découvrez une collection pensée pour celles et ceux qui recherchent l'élégance, le confort et un style qui se distingue au quotidien.": "اكتشفوا مجموعة مصممة لمن يبحثون عن الأناقة والراحة وأسلوب مميز في كل يوم.",
+        "Découvrir la collection": "اكتشفوا المجموعة",
+        "Explorer": "استكشفوا",
+        "La collection": "المجموعة",
+        "Trouvez votre": "اعثروا على",
+        "signature.": "أسلوبكم الخاص.",
+        "Des modèles sélectionnés avec soin pour créer un équilibre parfait entre confort, élégance et personnalité.": "موديلات مختارة بعناية لتحقيق توازن مثالي بين الراحة والأناقة والشخصية.",
+        "Collection Homme": "مجموعة الرجال",
+        "Le style": "الأناقة",
+        "au quotidien.": "في كل يوم.",
+        "Des modèles confortables et élégants conçus pour accompagner votre quotidien.": "موديلات مريحة وأنيقة صُممت لترافقكم في حياتكم اليومية.",
+        "Découvrir Homme": "اكتشفوا مجموعة الرجال",
+        "Collection Femme": "مجموعة النساء",
+        "L'élégance": "الأناقة",
+        "Des modèles pensés pour sublimer chaque tenue avec simplicité.": "موديلات صُممت لتمنح كل إطلالة لمسة أنيقة وبسيطة.",
+        "Découvrir Femme": "اكتشفوا مجموعة النساء",
+        "NOTRE UNIVERS": "عالمنا",
+        "Le confort": "الراحة",
+        "qui vous suit partout.": "التي ترافقكم أينما ذهبتم.",
+        "Des modèles pensés pour accompagner chaque pas, chaque journée et chaque style.": "موديلات صُممت لترافق كل خطوة وكل يوم وكل أسلوب.",
+        "Votre navigateur ne supporte pas la lecture vidéo.": "متصفحكم لا يدعم تشغيل الفيديو.",
+        "Une expérience": "تجربة",
+        "soignée": "متكاملة",
+        "Parce que chaque détail compte, nous vous accompagnons de votre commande jusqu'à sa réception.": "لأن كل تفصيل مهم، نرافقكم من لحظة الطلب حتى استلامه.",
+        "Livraison rapide": "توصيل سريع",
+        "Nous assurons la livraison partout en Algérie via DHD ou Yalidine, à domicile ou au bureau de livraison, selon votre choix.": "نوفر لكم التوصيل عبر شركتي DHD و Yalidine إلى جميع أنحاء الجزائر، إلى المنزل أو إلى مكتب الشحن حسب اختياركم.",
+        "Paiement sécurisé": "دفع آمن",
+        "Carte bancaire ou paiement à la livraison.": "الدفع بالبطاقة أو عند الاستلام.",
+        "Échange facile": "استبدال سهل",
+        "14 jours pour changer de modèle ou de taille.": "14 يومًا لتغيير الموديل أو المقاس.",
+        "Support dédié": "دعم مخصص",
+        "Notre équipe est là pour vous accompagner.": "فريقنا هنا لمساعدتكم ومرافقتكم.",
+        "Pourquoi": "لماذا",
+        "nous ?": "نحن؟",
+        "Qualité": "الجودة",
+        "Des modèles sélectionnés avec attention.": "موديلات مختارة بعناية.",
+        "Confort": "الراحة",
+        "Pensés pour vous accompagner au quotidien.": "مصممة لترافقكم كل يوم.",
+        "Élégance": "الأناقة",
+        "Un style simple, moderne et intemporel.": "أسلوب بسيط، عصري وخالد.",
+        "Sélection": "اختيارات مميزة",
+        "Des collections choisies pour vous.": "مجموعات مختارة بعناية من أجلكم.",
+        "RESTEZ CONNECTÉS": "ابقوا على تواصل",
+        "Suivez": "تابعوا",
+        "Découvrez nos nouveautés, nos inspirations et nos collections sur nos réseaux sociaux.": "اكتشفوا جديدنا، إلهامنا ومجموعاتنا عبر حساباتنا على مواقع التواصل الاجتماعي.",
+        "Instagram": "Instagram",
+        "Facebook": "Facebook",
+        "TikTok": "TikTok",
+        "WhatsApp": "WhatsApp",
+        "Contactez-nous": "تواصلوا معنا",
+        "Votre style. Votre univers. Sandalys DZ.": "أسلوبكم. عالمكم. Sandalys DZ.",
+        "© 2026 — Tous droits réservés": "© 2026 — جميع الحقوق محفوظة",
+        "Collection Sandalys DZ": "مجموعة Sandalys DZ",
+        "Instagram Sandalys DZ": "Instagram Sandalys DZ",
+        "Facebook Sandalys DZ": "Facebook Sandalys DZ",
+        "TikTok Sandalys DZ": "TikTok Sandalys DZ",
+        "WhatsApp Sandalys DZ": "WhatsApp Sandalys DZ",
+        "Témoignages": "آراء العملاء",
+        "Vos avis, notre plus belle récompense.": "آراؤكم هي أجمل مكافأة لنا.",
+        "Découvrez les impressions de nos clients après leur expérience Sandalys DZ.": "اكتشفوا انطباعات عملائنا بعد تجربتهم مع Sandalys DZ.",
+        "La confiance de nos clients": "ثقة عملائنا",
+        "Commande vérifiée": "طلب مؤكد",
+        "✓ Cliente Sandalys": "✓ عميلة Sandalys",
+        "✓ Client Sandalys": "✓ عميل Sandalys",
+        "Les avis présentés sont des exemples de mise en page à remplacer par les témoignages réels de vos clients.": "الآراء المعروضة أمثلة تصميمية، ويجب استبدالها بآراء حقيقية من عملائكم."
+    }
+};
+
+/*
+ * Robust language engine:
+ * - Uses normalized text keys, so line breaks, tabs and repeated spaces do not break translation.
+ * - Stores each text node's original French key once, then can switch FR <-> AR indefinitely.
+ * - Does not replace/rebuild HTML, SVGs, images, videos or existing elements.
+ */
+const normalizeI18nText = value => value.replace(/\s+/g, " ").trim();
+const textTranslationKeys = new WeakMap();
+
+function translatePage(lang) {
+    const target = translations[lang] || translations.fr;
+    const french = translations.fr;
+
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+
+    nodes.forEach(node => {
+        const raw = node.nodeValue;
+        const normalized = normalizeI18nText(raw);
+        if (!normalized) return;
+
+        let key = textTranslationKeys.get(node);
+        if (!key) {
+            /* First try the current/original French normalized value. */
+            key = Object.keys(french).find(k => normalizeI18nText(k) === normalized);
+
+            /* If the node is currently Arabic, recover the French key from the AR dictionary. */
+            if (!key) {
+                key = Object.keys(french).find(k => normalizeI18nText(target === translations.ar ? translations.ar[k] : k) === normalized);
+            }
+
+            if (key) textTranslationKeys.set(node, key);
+        }
+
+        if (!key || !Object.prototype.hasOwnProperty.call(target, key)) return;
+
+        const translated = target[key];
+        const leading = raw.match(/^\s*/)?.[0] || "";
+        const trailing = raw.match(/\s*$/)?.[0] || "";
+        node.nodeValue = leading + translated + trailing;
+    });
+
+    /* Accessible attributes and image alt text are translated too. */
+    document.querySelectorAll("[data-i18n-attr]").forEach(el => {
+        const attr = el.dataset.i18nAttr;
+        const key = el.dataset.i18nKey;
+        if (attr && key && target[key]) el.setAttribute(attr, target[key]);
+    });
+
+    document.title = target["Sandalys DZ — Services"] || document.title;
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+    document.body.classList.toggle("arabic", lang === "ar");
+    document.querySelectorAll(".lang-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.lang === lang);
+        btn.setAttribute("aria-pressed", btn.dataset.lang === lang ? "true" : "false");
+    });
+    localStorage.setItem("sandalys-lang", lang);
+}
+
+document.querySelectorAll(".lang-btn").forEach(btn => {
+    btn.addEventListener("click", () => translatePage(btn.dataset.lang));
+});
+
+/* Entire Homme/Femme cards navigate, not only the small button. */
+document.querySelectorAll(".category-link").forEach(card => {
+    card.addEventListener("click", e => {
+        if (e.target.closest("a")) return;
+        const href = card.dataset.href;
+        if (href) window.location.href = href;
+    });
+});
+
+const savedLang = localStorage.getItem("sandalys-lang") || "fr";
+translatePage(savedLang);
+</script>
+
+</body>
+</html>
